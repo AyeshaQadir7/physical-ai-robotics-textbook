@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module-2-simulation/module-2-intro" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Module 2: The Digital Twin (Gazebo &amp; Unity) | Physical AI &amp; Humanoid Robotics</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/docs/module-2-simulation/module-2-intro"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Module 2: The Digital Twin (Gazebo &amp; Unity) | Physical AI &amp; Humanoid Robotics"><meta data-rh="true" name="description" content="Master physics-based robot simulation using Gazebo and explore high-fidelity rendering with Unity"><meta data-rh="true" property="og:description" content="Master physics-based robot simulation using Gazebo and explore high-fidelity rendering with Unity"><meta data-rh="true" name="keywords" content="simulation,Gazebo,physics,URDF,sensors,Unity,robotics,capstone"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/docs/module-2-simulation/module-2-intro"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/module-2-simulation/module-2-intro" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/module-2-simulation/module-2-intro" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Digital Twin (Gazebo & Unity)","item":"https://your-docusaurus-site.example.com/docs/module-2-simulation/module-2-intro"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Physical AI &amp; Humanoid Robotics RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Physical AI &amp; Humanoid Robotics Atom Feed"><link rel="stylesheet" href="/assets/css/styles.78a6bc5e.css">
+<script src="/assets/js/runtime~main.1820c247.js" defer="defer"></script>
+<script src="/assets/js/main.b4f1c5f7.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Physical AI &amp; Robotics Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="Physical AI &amp; Robotics Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Robotics</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/course-intro">Tutorial</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/course-intro"><span title="Course Overview" class="linkLabel_WmDU">Course Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-0-foundations/module-0-intro"><span title="Foundation" class="categoryLinkLabel_W154">Foundation</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-0-prerequisites/module-0-prerequisites-intro"><span title="Prerequisites" class="categoryLinkLabel_W154">Prerequisites</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-1-ros2/module-1-intro"><span title="Module 1: The Robotic Nervous System (ROS 2)" class="categoryLinkLabel_W154">Module 1: The Robotic Nervous System (ROS 2)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/module-2-simulation/module-2-intro"><span title="Module 2: The Digital Twin (Gazebo &amp; Unity)" class="categoryLinkLabel_W154">Module 2: The Digital Twin (Gazebo &amp; Unity)</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/module-2-simulation/module-2-intro"><span title="The Digital Twin (Gazebo &amp; Unity)" class="linkLabel_WmDU">The Digital Twin (Gazebo &amp; Unity)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-2-simulation/module-2-gazebo-basics"><span title="Gazebo Basics" class="linkLabel_WmDU">Gazebo Basics</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-2-simulation/module-2-urdf"><span title="URDF" class="linkLabel_WmDU">URDF</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-2-simulation/module-2-sensors"><span title="Sensors" class="linkLabel_WmDU">Sensors</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-2-simulation/module-2-unity"><span title="Unity" class="linkLabel_WmDU">Unity</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-2-simulation/module-2-sim-to-real"><span title="Sim-to-Real" class="linkLabel_WmDU">Sim-to-Real</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-2-simulation/module-2-summary"><span title="Module Summary" class="linkLabel_WmDU">Module Summary</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/module-2-simulation/module-2-lab-1"><span title="Labs" class="categoryLinkLabel_W154">Labs</span></a></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-3-isaac/module-3-intro"><span title="Module 3: The AI-Robot Brain (NVIDIA Isaac™)" class="categoryLinkLabel_W154">Module 3: The AI-Robot Brain (NVIDIA Isaac™)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-4-vla/module-4-intro"><span title="Module 4: Vision-Language-Action (VLA)" class="categoryLinkLabel_W154">Module 4: Vision-Language-Action (VLA)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/capstone/capstone-requirements"><span title="Capstone Project" class="categoryLinkLabel_W154">Capstone Project</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/hardware-setup/hw-minimum-requirements"><span title="Hardware Setup" class="categoryLinkLabel_W154">Hardware Setup</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/glossary"><span title="Glossary" class="linkLabel_WmDU">Glossary</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Module 2: The Digital Twin (Gazebo &amp; Unity)</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">The Digital Twin (Gazebo &amp; Unity)</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Module 2: The Digital Twin (Gazebo &amp; Unity)</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="welcome-to-simulation">Welcome to Simulation<a href="#welcome-to-simulation" class="hash-link" aria-label="Direct link to Welcome to Simulation" title="Direct link to Welcome to Simulation" translate="no">​</a></h2>
+<p>You&#x27;ve mastered <strong>ROS 2 communication</strong> (Module 1). Now learn to <strong>simulate robots</strong> before deploying them to real hardware.</p>
+<p>This module teaches:</p>
+<ul>
+<li class=""><strong>Gazebo</strong>: Physics-accurate robot simulation</li>
+<li class=""><strong>URDF</strong>: Robot description language</li>
+<li class=""><strong>Sensors</strong>: Simulating cameras, LiDAR, IMU</li>
+<li class=""><strong>Unity</strong>: High-fidelity rendering for visualization</li>
+<li class=""><strong>Sim-to-Real</strong>: Bridging simulation and physical robots</li>
+</ul>
+<p><strong>Time commitment</strong>: 2 weeks (Weeks 6–7)
+<strong>Hands-on content</strong>: 3 labs, heavy Gazebo usage
+<strong>Capstone connection</strong>: Your robot will be simulated in Gazebo before capstone submission</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="module-learning-outcomes">Module Learning Outcomes<a href="#module-learning-outcomes" class="hash-link" aria-label="Direct link to Module Learning Outcomes" title="Direct link to Module Learning Outcomes" translate="no">​</a></h2>
+<p>By the end of Module 2, you will be able to:</p>
+<ol>
+<li class=""><strong>Set up Gazebo environments</strong> and understand the simulation loop</li>
+<li class=""><strong>Write URDF files</strong> describing robot structure, joints, and sensors</li>
+<li class=""><strong>Simulate sensors</strong> (camera, LiDAR, IMU) and publish ROS 2 topics</li>
+<li class=""><strong>Control simulated robots</strong> from ROS 2 nodes</li>
+<li class=""><strong>Understand sim-to-real transfer</strong> and bridge simulation to hardware</li>
+<li class=""><strong>Use Unity for high-fidelity visualization</strong> when physics accuracy is less critical</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-simulation-matters">Why Simulation Matters<a href="#why-simulation-matters" class="hash-link" aria-label="Direct link to Why Simulation Matters" title="Direct link to Why Simulation Matters" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-problem-real-robots-are-expensive">The Problem: Real Robots Are Expensive<a href="#the-problem-real-robots-are-expensive" class="hash-link" aria-label="Direct link to The Problem: Real Robots Are Expensive" title="Direct link to The Problem: Real Robots Are Expensive" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Cost</strong>: $5,000–$100,000+</li>
+<li class=""><strong>Safety</strong>: Bugs cause physical crashes</li>
+<li class=""><strong>Iteration</strong>: Slow feedback loop (10 min to deploy, test, modify)</li>
+<li class=""><strong>Access</strong>: Not all students have hardware</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-solution-simulation-first">The Solution: Simulation First<a href="#the-solution-simulation-first" class="hash-link" aria-label="Direct link to The Solution: Simulation First" title="Direct link to The Solution: Simulation First" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Free</strong>: Gazebo and most simulators are open-source</li>
+<li class=""><strong>Safe</strong>: Crash in simulation, learn from it</li>
+<li class=""><strong>Fast</strong>: Test changes in seconds, not minutes</li>
+<li class=""><strong>Accessible</strong>: Run on laptop; no special hardware</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-world-example-robotics-companies">Real-World Example: Robotics Companies<a href="#real-world-example-robotics-companies" class="hash-link" aria-label="Direct link to Real-World Example: Robotics Companies" title="Direct link to Real-World Example: Robotics Companies" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Boston Dynamics</strong>: Tests in simulation first, then deploys</li>
+<li class=""><strong>Tesla</strong>: Simulates robotics before manufacturing scale-up</li>
+<li class=""><strong>Waymo</strong>: Validates autonomous driving in simulation millions of times</li>
+<li class=""><strong>Your capstone</strong>: You&#x27;ll follow the same pattern</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="chapter-breakdown">Chapter Breakdown<a href="#chapter-breakdown" class="hash-link" aria-label="Direct link to Chapter Breakdown" title="Direct link to Chapter Breakdown" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="chapter-1-gazebo-basics--physics">Chapter 1: Gazebo Basics &amp; Physics<a href="#chapter-1-gazebo-basics--physics" class="hash-link" aria-label="Direct link to Chapter 1: Gazebo Basics &amp; Physics" title="Direct link to Chapter 1: Gazebo Basics &amp; Physics" translate="no">​</a></h3>
+<p><strong>Focus</strong>: Setting up simulation environments</p>
+<ul>
+<li class="">What is Gazebo? Why use it for robotics?</li>
+<li class="">Physics engines (ODE, Bullet, DART)</li>
+<li class="">Creating worlds, spawning models</li>
+<li class="">Gravity, friction, collision simulation</li>
+<li class="">Running Gazebo from ROS 2 launch files</li>
+</ul>
+<p><strong>Reading time</strong>: ~40 minutes
+<strong>Key takeaway</strong>: Gazebo is your physics simulation sandbox</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="chapter-2-urdf--robot-descriptions">Chapter 2: URDF &amp; Robot Descriptions<a href="#chapter-2-urdf--robot-descriptions" class="hash-link" aria-label="Direct link to Chapter 2: URDF &amp; Robot Descriptions" title="Direct link to Chapter 2: URDF &amp; Robot Descriptions" translate="no">​</a></h3>
+<p><strong>Focus</strong>: Defining robot structure</p>
+<ul>
+<li class="">What is URDF? (Unified Robot Description Format)</li>
+<li class="">Links (rigid bodies) and joints (connections)</li>
+<li class="">Inertial properties and mass</li>
+<li class="">Sensors in URDF (camera, LiDAR, IMU)</li>
+<li class="">From URDF to Gazebo simulation</li>
+</ul>
+<p><strong>Reading time</strong>: ~45 minutes
+<strong>Key takeaway</strong>: URDF tells Gazebo how your robot is built</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="chapter-3-sensors-in-gazebo">Chapter 3: Sensors in Gazebo<a href="#chapter-3-sensors-in-gazebo" class="hash-link" aria-label="Direct link to Chapter 3: Sensors in Gazebo" title="Direct link to Chapter 3: Sensors in Gazebo" translate="no">​</a></h3>
+<p><strong>Focus</strong>: Simulating robot perception</p>
+<ul>
+<li class="">Camera simulation (RGB, depth images)</li>
+<li class="">LiDAR (laser scan simulation)</li>
+<li class="">IMU (accelerometer, gyroscope)</li>
+<li class="">Publishing sensor data to ROS 2 topics</li>
+<li class="">Sensor plugins and configuration</li>
+</ul>
+<p><strong>Reading time</strong>: ~40 minutes
+<strong>Key takeaway</strong>: Simulated sensors feed your perception pipeline</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="chapter-4-unity-for-robotics">Chapter 4: Unity for Robotics<a href="#chapter-4-unity-for-robotics" class="hash-link" aria-label="Direct link to Chapter 4: Unity for Robotics" title="Direct link to Chapter 4: Unity for Robotics" translate="no">​</a></h3>
+<p><strong>Focus</strong>: When to use high-fidelity rendering</p>
+<ul>
+<li class="">Gazebo vs. Unity: tradeoffs</li>
+<li class="">Why use Unity? (stunning graphics, HRI visualization)</li>
+<li class="">ROS 2 integration in Unity</li>
+<li class="">When physics accuracy matters vs. when visuals do</li>
+<li class="">Simulation for human-robot interaction</li>
+</ul>
+<p><strong>Reading time</strong>: ~30 minutes
+<strong>Key takeaway</strong>: Choose the right tool for your simulation goal</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="chapter-5-sim-to-real-considerations">Chapter 5: Sim-to-Real Considerations<a href="#chapter-5-sim-to-real-considerations" class="hash-link" aria-label="Direct link to Chapter 5: Sim-to-Real Considerations" title="Direct link to Chapter 5: Sim-to-Real Considerations" translate="no">​</a></h3>
+<p><strong>Focus</strong>: Bridging simulation and physical robots</p>
+<ul>
+<li class="">The &quot;reality gap&quot; (why simulation ≠ real world)</li>
+<li class="">Domain randomization (training for variety)</li>
+<li class="">Validation on hardware</li>
+<li class="">Transfer learning from sim to real</li>
+<li class="">Safety validation before deployment</li>
+</ul>
+<p><strong>Reading time</strong>: ~35 minutes
+<strong>Key takeaway</strong>: Simulation enables learning; hardware validates it</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="module-2-labs">Module 2 Labs<a href="#module-2-labs" class="hash-link" aria-label="Direct link to Module 2 Labs" title="Direct link to Module 2 Labs" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="lab-21-load-a-robot-in-gazebo">Lab 2.1: Load a Robot in Gazebo<a href="#lab-21-load-a-robot-in-gazebo" class="hash-link" aria-label="Direct link to Lab 2.1: Load a Robot in Gazebo" title="Direct link to Lab 2.1: Load a Robot in Gazebo" translate="no">​</a></h4>
+<ul>
+<li class="">Create a simple humanoid URDF</li>
+<li class="">Spawn in Gazebo</li>
+<li class="">Apply forces, observe physics</li>
+<li class="">Verify inertia and collisions</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="lab-22-publish-sensor-data">Lab 2.2: Publish Sensor Data<a href="#lab-22-publish-sensor-data" class="hash-link" aria-label="Direct link to Lab 2.2: Publish Sensor Data" title="Direct link to Lab 2.2: Publish Sensor Data" translate="no">​</a></h4>
+<ul>
+<li class="">Add camera and LiDAR to URDF</li>
+<li class="">Simulate sensor readings</li>
+<li class="">Visualize with ROS 2 tools</li>
+<li class="">Verify data quality</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="lab-23-control-robot-in-simulation">Lab 2.3: Control Robot in Simulation<a href="#lab-23-control-robot-in-simulation" class="hash-link" aria-label="Direct link to Lab 2.3: Control Robot in Simulation" title="Direct link to Lab 2.3: Control Robot in Simulation" translate="no">​</a></h4>
+<ul>
+<li class="">Send ROS 2 velocity commands</li>
+<li class="">Watch robot move in Gazebo</li>
+<li class="">Implement simple control loop</li>
+<li class="">Verify joint limits and safety</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-this-module-connects-to-your-capstone">How This Module Connects to Your Capstone<a href="#how-this-module-connects-to-your-capstone" class="hash-link" aria-label="Direct link to How This Module Connects to Your Capstone" title="Direct link to How This Module Connects to Your Capstone" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="module-2-contribution-simulation-environment">Module 2 Contribution: Simulation Environment<a href="#module-2-contribution-simulation-environment" class="hash-link" aria-label="Direct link to Module 2 Contribution: Simulation Environment" title="Direct link to Module 2 Contribution: Simulation Environment" translate="no">​</a></h3>
+<p>Your capstone robot will run in Gazebo:</p>
+<p><strong>Week 6–7</strong>: Gazebo + URDF setup
+→ You build simulation of your robot structure</p>
+<p><strong>Week 8–10</strong>: Sensor simulation + perception
+→ Camera and LiDAR feed into perception pipeline</p>
+<p><strong>Week 11–13</strong>: Full system in simulation
+→ Voice control works in simulated world before real deployment</p>
+<p><strong>Week 13 Capstone</strong>: Submit simulation demo + code + report</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites--self-check">Prerequisites &amp; Self-Check<a href="#prerequisites--self-check" class="hash-link" aria-label="Direct link to Prerequisites &amp; Self-Check" title="Direct link to Prerequisites &amp; Self-Check" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-knowledge-from-module-1">Required Knowledge (from Module 1)<a href="#required-knowledge-from-module-1" class="hash-link" aria-label="Direct link to Required Knowledge (from Module 1)" title="Direct link to Required Knowledge (from Module 1)" translate="no">​</a></h3>
+<ul>
+<li class="">✅ ROS 2 nodes and topics</li>
+<li class="">✅ Launch files and parameter passing</li>
+<li class="">✅ Basic Python and Linux terminal</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-tools-youll-learn">New Tools You&#x27;ll Learn<a href="#new-tools-youll-learn" class="hash-link" aria-label="Direct link to New Tools You&#x27;ll Learn" title="Direct link to New Tools You&#x27;ll Learn" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Gazebo</strong>: Physics simulation</li>
+<li class=""><strong>URDF</strong>: XML-based robot descriptions</li>
+<li class=""><strong>RViz</strong>: ROS 2 visualization</li>
+<li class=""><strong>Xacro</strong> (optional): Macros for URDF simplification</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="systems-youll-need">Systems You&#x27;ll Need<a href="#systems-youll-need" class="hash-link" aria-label="Direct link to Systems You&#x27;ll Need" title="Direct link to Systems You&#x27;ll Need" translate="no">​</a></h3>
+<ul>
+<li class="">Ubuntu 22.04 with ROS 2 Humble</li>
+<li class="">Gazebo (installed with ROS 2)</li>
+<li class="">Text editor (VS Code, nano, vim)</li>
+<li class="">Graphics card helpful (but integrated GPU works)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="module-structure">Module Structure<a href="#module-structure" class="hash-link" aria-label="Direct link to Module Structure" title="Direct link to Module Structure" translate="no">​</a></h2>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">6 chapters (theory + examples)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">3 hands-on labs (progressive difficulty)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Complete URDF + Gazebo world</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Control simulated robot from ROS 2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Ready for Module 3 (perception)</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="time-commitment">Time Commitment<a href="#time-commitment" class="hash-link" aria-label="Direct link to Time Commitment" title="Direct link to Time Commitment" translate="no">​</a></h2>
+<p><strong>Per Week</strong>: 5–7 hours</p>
+<ul>
+<li class=""><strong>Lectures/Reading</strong>: 2–2.5 hours</li>
+<li class=""><strong>Labs/Simulation</strong>: 2.5–3 hours</li>
+<li class=""><strong>Practice/Experimentation</strong>: 1–1.5 hours</li>
+</ul>
+<p><strong>Heavy Lab Weeks</strong> (Weeks 6–7):</p>
+<ul>
+<li class="">Expect 7–9 hours/week (Gazebo debugging is time-consuming)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-concepts-preview">Key Concepts Preview<a href="#key-concepts-preview" class="hash-link" aria-label="Direct link to Key Concepts Preview" title="Direct link to Key Concepts Preview" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gazebo-simulation-loop">Gazebo Simulation Loop<a href="#gazebo-simulation-loop" class="hash-link" aria-label="Direct link to Gazebo Simulation Loop" title="Direct link to Gazebo Simulation Loop" translate="no">​</a></h3>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">1. Load URDF (robot description)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">2. Apply physics (gravity, forces)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">3. Integrate physics (100 Hz typically)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">4. Publish sensor data (camera, LiDAR, IMU)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">5. ROS 2 node receives sensor topics</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">6. ROS 2 node publishes motor commands</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">7. Gazebo applies forces to motors</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">8. Repeat at high frequency</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-urdf-pipeline">The URDF Pipeline<a href="#the-urdf-pipeline" class="hash-link" aria-label="Direct link to The URDF Pipeline" title="Direct link to The URDF Pipeline" translate="no">​</a></h3>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">robot.urdf (XML)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">URDF Parser</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Link tree + Joint constraints</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Gazebo physics engine</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Simulated robot in 3D world</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-resources">Learning Resources<a href="#learning-resources" class="hash-link" aria-label="Direct link to Learning Resources" title="Direct link to Learning Resources" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="official-documentation">Official Documentation<a href="#official-documentation" class="hash-link" aria-label="Direct link to Official Documentation" title="Direct link to Official Documentation" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://gazebosim.org/docs" target="_blank" rel="noopener noreferrer" class="">Gazebo Documentation</a></li>
+<li class=""><a href="https://docs.ros.org/en/humble/Tutorials/Advanced/Simulators/Gazebo/Gazebo.html" target="_blank" rel="noopener noreferrer" class="">ROS 2 + Gazebo Integration</a></li>
+<li class=""><a href="http://wiki.ros.org/urdf/Tutorials" target="_blank" rel="noopener noreferrer" class="">URDF Tutorial</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="interactive-resources">Interactive Resources<a href="#interactive-resources" class="hash-link" aria-label="Direct link to Interactive Resources" title="Direct link to Interactive Resources" translate="no">​</a></h3>
+<ul>
+<li class="">Gazebo tutorials (included with installation)</li>
+<li class="">Example URDFs in <code>ros_tutorials</code> package</li>
+<li class="">RViz for sensor visualization</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="support--troubleshooting">Support &amp; Troubleshooting<a href="#support--troubleshooting" class="hash-link" aria-label="Direct link to Support &amp; Troubleshooting" title="Direct link to Support &amp; Troubleshooting" translate="no">​</a></h2>
+<p><strong>Common Issues in Module 2</strong>:</p>
+<ul>
+<li class="">Gazebo crashes or runs slowly → Graphics driver update</li>
+<li class="">Robot falls through ground → Collision shapes or inertia issue</li>
+<li class="">Sensors don&#x27;t publish → Plugin configuration</li>
+<li class="">ROS 2 connection fails → Domain ID or network issue</li>
+</ul>
+<p><strong>We&#x27;ll cover troubleshooting</strong> in each lab section.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>Review Module 1</strong>: Ensure ROS 2 fundamentals solid</li>
+<li class=""><strong>Install Gazebo</strong> (if not already done):<!-- -->
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo apt install ros-humble-gazebo-*</span><br></span></code></pre></div></div>
+</li>
+<li class=""><strong>Test Gazebo</strong>:<!-- -->
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">gazebo --version</span><br></span></code></pre></div></div>
+</li>
+<li class=""><strong>Start Chapter 1</strong>: Gazebo Basics &amp; Physics</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="navigation">Navigation<a href="#navigation" class="hash-link" aria-label="Direct link to Navigation" title="Direct link to Navigation" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Previous Module</strong>: <a class="" href="/docs/module-1-ros2/module-1-summary">Module 1 Summary</a></li>
+<li class=""><strong>Next</strong>: <a class="" href="/docs/module-2-simulation/module-2-gazebo-basics">Chapter 1: Gazebo Basics &amp; Physics</a></li>
+<li class=""><strong>Capstone</strong>: <a class="" href="/docs/capstone/capstone-requirements">Capstone Requirements</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-stats">Quick Stats<a href="#quick-stats" class="hash-link" aria-label="Direct link to Quick Stats" title="Direct link to Quick Stats" translate="no">​</a></h2>
+<table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td><strong>Module duration</strong></td><td>2 weeks</td></tr><tr><td><strong>Chapters</strong></td><td>5 + 3 labs</td></tr><tr><td><strong>Estimated reading</strong></td><td>3–4 hours</td></tr><tr><td><strong>Lab time</strong></td><td>8–10 hours</td></tr><tr><td><strong>Robot to simulate</strong></td><td>Generic humanoid (provided)</td></tr><tr><td><strong>Sensors simulated</strong></td><td>Camera, LiDAR, IMU</td></tr><tr><td><strong>Physics engines</strong></td><td>ODE, Bullet, DART (use ODE)</td></tr></tbody></table>
+<hr>
+<p><strong>Welcome to simulation!</strong> 🎮</p>
+<p>By the end of this module, you&#x27;ll understand how the world&#x27;s leading robotics companies validate their robots safely and efficiently.</p>
+<p>Let&#x27;s begin! 🚀</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-2-simulation/intro.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/module-1-ros2/module-1-lab-1-3"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Lab 1.3: ROS 2 Package</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/module-2-simulation/module-2-gazebo-basics"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Gazebo Basics</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#welcome-to-simulation" class="table-of-contents__link toc-highlight">Welcome to Simulation</a></li><li><a href="#module-learning-outcomes" class="table-of-contents__link toc-highlight">Module Learning Outcomes</a></li><li><a href="#why-simulation-matters" class="table-of-contents__link toc-highlight">Why Simulation Matters</a><ul><li><a href="#the-problem-real-robots-are-expensive" class="table-of-contents__link toc-highlight">The Problem: Real Robots Are Expensive</a></li><li><a href="#the-solution-simulation-first" class="table-of-contents__link toc-highlight">The Solution: Simulation First</a></li><li><a href="#real-world-example-robotics-companies" class="table-of-contents__link toc-highlight">Real-World Example: Robotics Companies</a></li></ul></li><li><a href="#chapter-breakdown" class="table-of-contents__link toc-highlight">Chapter Breakdown</a><ul><li><a href="#chapter-1-gazebo-basics--physics" class="table-of-contents__link toc-highlight">Chapter 1: Gazebo Basics &amp; Physics</a></li><li><a href="#chapter-2-urdf--robot-descriptions" class="table-of-contents__link toc-highlight">Chapter 2: URDF &amp; Robot Descriptions</a></li><li><a href="#chapter-3-sensors-in-gazebo" class="table-of-contents__link toc-highlight">Chapter 3: Sensors in Gazebo</a></li><li><a href="#chapter-4-unity-for-robotics" class="table-of-contents__link toc-highlight">Chapter 4: Unity for Robotics</a></li><li><a href="#chapter-5-sim-to-real-considerations" class="table-of-contents__link toc-highlight">Chapter 5: Sim-to-Real Considerations</a></li><li><a href="#module-2-labs" class="table-of-contents__link toc-highlight">Module 2 Labs</a></li></ul></li><li><a href="#how-this-module-connects-to-your-capstone" class="table-of-contents__link toc-highlight">How This Module Connects to Your Capstone</a><ul><li><a href="#module-2-contribution-simulation-environment" class="table-of-contents__link toc-highlight">Module 2 Contribution: Simulation Environment</a></li></ul></li><li><a href="#prerequisites--self-check" class="table-of-contents__link toc-highlight">Prerequisites &amp; Self-Check</a><ul><li><a href="#required-knowledge-from-module-1" class="table-of-contents__link toc-highlight">Required Knowledge (from Module 1)</a></li><li><a href="#new-tools-youll-learn" class="table-of-contents__link toc-highlight">New Tools You&#39;ll Learn</a></li><li><a href="#systems-youll-need" class="table-of-contents__link toc-highlight">Systems You&#39;ll Need</a></li></ul></li><li><a href="#module-structure" class="table-of-contents__link toc-highlight">Module Structure</a></li><li><a href="#time-commitment" class="table-of-contents__link toc-highlight">Time Commitment</a></li><li><a href="#key-concepts-preview" class="table-of-contents__link toc-highlight">Key Concepts Preview</a><ul><li><a href="#gazebo-simulation-loop" class="table-of-contents__link toc-highlight">Gazebo Simulation Loop</a></li><li><a href="#the-urdf-pipeline" class="table-of-contents__link toc-highlight">The URDF Pipeline</a></li></ul></li><li><a href="#learning-resources" class="table-of-contents__link toc-highlight">Learning Resources</a><ul><li><a href="#official-documentation" class="table-of-contents__link toc-highlight">Official Documentation</a></li><li><a href="#interactive-resources" class="table-of-contents__link toc-highlight">Interactive Resources</a></li></ul></li><li><a href="#support--troubleshooting" class="table-of-contents__link toc-highlight">Support &amp; Troubleshooting</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li><li><a href="#navigation" class="table-of-contents__link toc-highlight">Navigation</a></li><li><a href="#quick-stats" class="table-of-contents__link toc-highlight">Quick Stats</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Robotics. Built with Docusaurus and Speckit Plus.</div></div></div></footer></div>
+</body>
+</html>

@@ -5,8 +5,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "Physical AI & Humanoid Robotics Textbook",
-  tagline: "Dinosaurs are cool",
+  title: "Physical AI & Humanoid Robotics",
+  tagline: "AI Systems in the Physical World. Embodied Intelligence.",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -15,17 +15,17 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://AyeshaQadir7.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/physical-ai-robotics-textbook/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "AyeshaQadir7", // Usually your GitHub org/user name.
+  projectName: "physical-ai-robotics-textbook", // Usually your repo name.
 
-  onBrokenLinks: "warn",  // Changed from "throw" to allow incomplete content generation
+  onBrokenLinks: "warn", // Changed from "throw" to allow incomplete content generation
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -44,7 +44,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/AyeshaQadir7/physical-ai-robotics-textbook",
         },
         blog: {
           showReadingTime: true,
@@ -55,7 +55,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/AyeshaQadir7/physical-ai-robotics-textbook/tree/main/frontend/",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
@@ -75,9 +75,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "My Site",
+      title: "Physical AI & Robotics",
       logo: {
-        alt: "My Site Logo",
+        alt: "Physical AI & Robotics Logo",
         src: "img/logo.svg",
       },
       items: [
@@ -85,11 +85,11 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Tutorial",
+          label: "Textbook",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/AyeshaQadir7/physical-ai-robotics-textbook",
           label: "GitHub",
           position: "right",
         },
@@ -102,25 +102,41 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "Start Reading",
+              to: "docs/course-intro",
+            },
+            {
+              label: "Course Overview",
+              to: "/docs/module-1-ros2/module-1-intro",
+            },
+            {
+              label: "Prerequisites",
+              to: "/docs/module-0-prerequisites/module-0-prerequisites-intro",
+            },
+            {
+              label: "Hardware Setup",
+              to: "/docs/hardware-setup/hw-minimum-requirements",
             },
           ],
         },
         {
-          title: "Community",
+          title: "Modules",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              label: "Moduel 1",
+              href: "/docs/module-1-ros2/module-1-intro",
             },
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              label: "Moudle 2",
+              href: "/docs/module-2-simulation/module-2-intro",
             },
             {
-              label: "X",
-              href: "https://x.com/docusaurus",
+              label: "Module 3",
+              href: "/docs/module-3-isaac/module-3-intro",
+            },
+            {
+              label: "Module 4",
+              href: "/docs/module-4-vla/module-4-intro",
             },
           ],
         },
@@ -128,17 +144,17 @@ const config: Config = {
           title: "More",
           items: [
             {
-              label: "Blog",
-              to: "/blog",
+              label: "GitHub",
+              href: "https://github.com/AyeshaQadir7/physical-ai-robotics-textbook",
             },
             {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              label: "Author",
+              href: "https://github.com/AyeshaQadir7",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Robotics. Built with Docusaurus and Speckit Plus.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module-0-foundations/humanoid-robotics-landscape" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Humanoid Robotics Landscape | Physical AI &amp; Humanoid Robotics</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/docs/module-0-foundations/humanoid-robotics-landscape"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Humanoid Robotics Landscape | Physical AI &amp; Humanoid Robotics"><meta data-rh="true" name="description" content="Explore available humanoid robot platforms, compare simulation-first vs. physical-first learning paths, and understand hardware requirements for your robotics journey"><meta data-rh="true" property="og:description" content="Explore available humanoid robot platforms, compare simulation-first vs. physical-first learning paths, and understand hardware requirements for your robotics journey"><meta data-rh="true" name="keywords" content="humanoid robots,Unitree G1,Boston Dynamics Spot,simulation,Gazebo,Isaac Sim,robotics platforms,learning paths,hardware requirements,Jetson Orin"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/docs/module-0-foundations/humanoid-robotics-landscape"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/module-0-foundations/humanoid-robotics-landscape" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/module-0-foundations/humanoid-robotics-landscape" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Humanoid Robotics Landscape","item":"https://your-docusaurus-site.example.com/docs/module-0-foundations/humanoid-robotics-landscape"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Physical AI &amp; Humanoid Robotics RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Physical AI &amp; Humanoid Robotics Atom Feed"><link rel="stylesheet" href="/assets/css/styles.78a6bc5e.css">
+<script src="/assets/js/runtime~main.1820c247.js" defer="defer"></script>
+<script src="/assets/js/main.b4f1c5f7.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Physical AI &amp; Robotics Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="Physical AI &amp; Robotics Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Robotics</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/course-intro">Tutorial</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/course-intro"><span title="Course Overview" class="linkLabel_WmDU">Course Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/module-0-foundations/module-0-intro"><span title="Foundation" class="categoryLinkLabel_W154">Foundation</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-0-foundations/module-0-intro"><span title="Core Concepts &amp; Fundamentals" class="linkLabel_WmDU">Core Concepts &amp; Fundamentals</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-0-foundations/what-is-physical-ai"><span title="What is Physical AI?" class="linkLabel_WmDU">What is Physical AI?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-0-foundations/why-physical-ai-matters"><span title="Why Physical AI Matters" class="linkLabel_WmDU">Why Physical AI Matters</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/module-0-foundations/humanoid-robotics-landscape"><span title="Humanoid Robotics Landscape" class="linkLabel_WmDU">Humanoid Robotics Landscape</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-0-foundations/module-0-learning-path"><span title="Learning Path &amp; Prerequisites" class="linkLabel_WmDU">Learning Path &amp; Prerequisites</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module-0-foundations/module-0-summary"><span title="Summary" class="linkLabel_WmDU">Summary</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-0-prerequisites/module-0-prerequisites-intro"><span title="Prerequisites" class="categoryLinkLabel_W154">Prerequisites</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-1-ros2/module-1-intro"><span title="Module 1: The Robotic Nervous System (ROS 2)" class="categoryLinkLabel_W154">Module 1: The Robotic Nervous System (ROS 2)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-2-simulation/module-2-intro"><span title="Module 2: The Digital Twin (Gazebo &amp; Unity)" class="categoryLinkLabel_W154">Module 2: The Digital Twin (Gazebo &amp; Unity)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-3-isaac/module-3-intro"><span title="Module 3: The AI-Robot Brain (NVIDIA Isaac™)" class="categoryLinkLabel_W154">Module 3: The AI-Robot Brain (NVIDIA Isaac™)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module-4-vla/module-4-intro"><span title="Module 4: Vision-Language-Action (VLA)" class="categoryLinkLabel_W154">Module 4: Vision-Language-Action (VLA)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/capstone/capstone-requirements"><span title="Capstone Project" class="categoryLinkLabel_W154">Capstone Project</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/hardware-setup/hw-minimum-requirements"><span title="Hardware Setup" class="categoryLinkLabel_W154">Hardware Setup</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/glossary"><span title="Glossary" class="linkLabel_WmDU">Glossary</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Foundation</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Humanoid Robotics Landscape</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Humanoid Robotics Landscape</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h2>
+<p>Not all robots are created equal. In the previous chapters, we explored what Physical AI is and why the industry is investing billions in humanoid robotics. Now comes the practical question: <strong>which platform should I use to learn?</strong></p>
+<p>This chapter guides you through the landscape of available platforms—from cutting-edge physical robots to high-fidelity simulations—and helps you understand the trade-offs between each path. Whether you&#x27;re learning through simulation first or diving directly into physical hardware, this chapter provides the information you need to make an informed decision.</p>
+<p><strong>Why does this matter?</strong> Your choice of platform shapes your entire learning experience. A simulation-first path offers safety, cost-effectiveness, and rapid iteration. A physical-first path provides immediate real-world feedback and embodied understanding. Neither is universally &quot;right&quot;—it depends on your goals, resources, and learning style.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-outcomes">Learning Outcomes<a href="#learning-outcomes" class="hash-link" aria-label="Direct link to Learning Outcomes" title="Direct link to Learning Outcomes" translate="no">​</a></h2>
+<p>By the end of this chapter, you will be able to:</p>
+<ol>
+<li class=""><strong>Understand available humanoid robot platforms</strong> and articulate their unique trade-offs in terms of cost, capability, accessibility, and suitability for learning</li>
+<li class=""><strong>Compare simulation-first vs. physical-first learning paths</strong> and choose the approach that aligns with your goals and constraints</li>
+<li class=""><strong>Specify hardware requirements</strong> for both simulation and physical deployment, including system specs, safety considerations, and optional components</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-1-available-humanoid-platforms">Part 1: Available Humanoid Platforms<a href="#part-1-available-humanoid-platforms" class="hash-link" aria-label="Direct link to Part 1: Available Humanoid Platforms" title="Direct link to Part 1: Available Humanoid Platforms" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h3>
+<p>The humanoid robotics market has expanded dramatically in the past 18 months. You have access to platforms ranging from open-source research robots to commercial systems and high-fidelity simulators. Here&#x27;s what&#x27;s available:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="11-unitree-g1-open-source-research-platform">1.1 Unitree G1 (Open-Source Research Platform)<a href="#11-unitree-g1-open-source-research-platform" class="hash-link" aria-label="Direct link to 1.1 Unitree G1 (Open-Source Research Platform)" title="Direct link to 1.1 Unitree G1 (Open-Source Research Platform)" translate="no">​</a></h3>
+<p><strong>Key Characteristics</strong>:</p>
+<ul>
+<li class=""><strong>Cost</strong>: $150,000–$200,000 USD (or lease programs)</li>
+<li class=""><strong>Availability</strong>: Open-source design; global distribution through authorized partners</li>
+<li class=""><strong>Use Cases</strong>: Academic research, manipulation, locomotion, learning platforms</li>
+<li class=""><strong>Status</strong>: 200+ research institutions, primary platform for university labs worldwide</li>
+</ul>
+<p><strong>Why Unitree G1?</strong></p>
+<p>Unitree positions the G1 as the &quot;research-first&quot; humanoid. It emphasizes accessibility through:</p>
+<ul>
+<li class="">Open-source hardware and software stack</li>
+<li class="">Active community and research partnerships</li>
+<li class="">Modular design allowing customization</li>
+<li class="">Strong ROS 2 integration (native support)</li>
+</ul>
+<p><strong>Hardware Specifications</strong>:</p>
+<table><thead><tr><th>Specification</th><th>Value</th></tr></thead><tbody><tr><td><strong>Height</strong></td><td>160 cm (can be adjusted)</td></tr><tr><td><strong>Weight</strong></td><td>~55 kg</td></tr><tr><td><strong>Degrees of Freedom (DoF)</strong></td><td>23 DoF (full body articulation)</td></tr><tr><td><strong>Arm Actuation</strong></td><td>7 DoF per arm (UR-style collaborative design)</td></tr><tr><td><strong>Leg Actuation</strong></td><td>6 DoF per leg (hydraulic or electric hybrid)</td></tr><tr><td><strong>Torso</strong></td><td>3 DoF (pitch, roll, yaw)</td></tr><tr><td><strong>Head</strong></td><td>2 DoF (pan, tilt)</td></tr><tr><td><strong>Max Speed</strong></td><td>1.5 m/s (walking)</td></tr><tr><td><strong>Battery Life</strong></td><td>4–6 hours continuous operation</td></tr><tr><td><strong>Sensors</strong></td><td>IMU, force-torque (F/T) sensors on limbs, RGB cameras (2x), depth camera, microphones</td></tr><tr><td><strong>Compute</strong></td><td>Onboard x86 CPU + GPU module (can support ROS 2 Humble/Iron)</td></tr><tr><td><strong>Communication</strong></td><td>ROS 2, standard networking (WiFi/Ethernet)</td></tr><tr><td><strong>Safety Features</strong></td><td>Motor torque limits, proprioception feedback, safe shutdown modes</td></tr></tbody></table>
+<p><strong>Why Unitree for This Course</strong>:</p>
+<ul>
+<li class="">Open-source ecosystem aligns with academic learning goals</li>
+<li class="">ROS 2 integration means you directly apply Modules 1 concepts</li>
+<li class="">Active development means your work contributes to actual research</li>
+<li class="">Cost is high, but significantly lower than Boston Dynamics or Tesla alternatives</li>
+</ul>
+<p><strong>Trade-offs</strong>:</p>
+<ul>
+<li class=""><strong>Pros</strong>: Open design, community support, research credibility</li>
+<li class=""><strong>Cons</strong>: Requires capital investment, ongoing maintenance, steep learning curve for full system control</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="12-boston-dynamics-spot-quadrupedal-specialist">1.2 Boston Dynamics Spot (Quadrupedal Specialist)<a href="#12-boston-dynamics-spot-quadrupedal-specialist" class="hash-link" aria-label="Direct link to 1.2 Boston Dynamics Spot (Quadrupedal Specialist)" title="Direct link to 1.2 Boston Dynamics Spot (Quadrupedal Specialist)" translate="no">​</a></h3>
+<p><strong>Key Characteristics</strong>:</p>
+<ul>
+<li class=""><strong>Cost</strong>: $90,000–$150,000 USD (hardware + SDK licensing)</li>
+<li class=""><strong>Availability</strong>: Commercial leasing programs available; direct purchase for qualified teams</li>
+<li class=""><strong>Use Cases</strong>: Inspection, hazardous environment navigation, research platforms</li>
+<li class=""><strong>Status</strong>: Deployed in 50+ commercial sites worldwide</li>
+</ul>
+<p><strong>Why Boston Dynamics Spot?</strong></p>
+<p>Spot is not humanoid in the traditional sense—it&#x27;s a quadruped. However, it&#x27;s included here because:</p>
+<ul>
+<li class="">It demonstrates advanced locomotion and balance (key Physical AI challenge)</li>
+<li class="">It&#x27;s commercially proven and extensively documented</li>
+<li class="">It teaches generalized robot control, not just humanoid-specific kinematics</li>
+<li class="">Some research groups use Spot + custom upper body for hybrid systems</li>
+</ul>
+<p><strong>Hardware Specifications</strong>:</p>
+<table><thead><tr><th>Specification</th><th>Value</th></tr></thead><tbody><tr><td><strong>Form Factor</strong></td><td>Quadrupedal (4-legged)</td></tr><tr><td><strong>Dimensions</strong></td><td>1.1 m L × 0.34 m W × 0.84 m H</td></tr><tr><td><strong>Weight</strong></td><td>32.3 kg</td></tr><tr><td><strong>Degrees of Freedom</strong></td><td>12 DoF (3 per leg)</td></tr><tr><td><strong>Max Speed</strong></td><td>1.6 m/s (controlled walking)</td></tr><tr><td><strong>Incline Capability</strong></td><td>45° (slopes)</td></tr><tr><td><strong>Step Height</strong></td><td>Up to 0.5 m (obstacles)</td></tr><tr><td><strong>Battery Life</strong></td><td>2.5–4 hours (varies by activity)</td></tr><tr><td><strong>Sensors</strong></td><td>IMU (in each leg), pressure sensors (feet), stereo depth cameras (2x), thermal camera (IR), microphone</td></tr><tr><td><strong>Compute</strong></td><td>Onboard compute (proprietary; SDK abstraction layer)</td></tr><tr><td><strong>Communication</strong></td><td>REST API, Python SDK, ROS 2 bridge (via third-party packages)</td></tr><tr><td><strong>Payload</strong></td><td>Up to 14 kg (mounted on back)</td></tr><tr><td><strong>Safety Features</strong></td><td>Automatic balance recovery, terrain-adaptive gait, self-righting</td></tr></tbody></table>
+<p><strong>Why Spot for This Course</strong>:</p>
+<ul>
+<li class="">Exceptional documentation and research partnerships</li>
+<li class="">API is beginner-friendly (Python-first)</li>
+<li class="">Locomotion algorithms are generalizable to humanoids</li>
+<li class="">Commercially proven reliability</li>
+</ul>
+<p><strong>Trade-offs</strong>:</p>
+<ul>
+<li class=""><strong>Pros</strong>: Commercially mature, excellent documentation, proven safety record</li>
+<li class=""><strong>Cons</strong>: Not humanoid (different control paradigms), proprietary SDK (limited source access)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="13-tesla-optimus-commercial-prototype">1.3 Tesla Optimus (Commercial Prototype)<a href="#13-tesla-optimus-commercial-prototype" class="hash-link" aria-label="Direct link to 1.3 Tesla Optimus (Commercial Prototype)" title="Direct link to 1.3 Tesla Optimus (Commercial Prototype)" translate="no">​</a></h3>
+<p><strong>Key Characteristics</strong>:</p>
+<ul>
+<li class=""><strong>Cost</strong>: $20,000–$25,000 target (Generation 2, expected 2026)</li>
+<li class=""><strong>Availability</strong>: Limited prototypes; broad commercial deployment planned 2025–2026</li>
+<li class=""><strong>Use Cases</strong>: Manufacturing, assembly, factory automation</li>
+<li class=""><strong>Status</strong>: Initial deployments in Tesla facilities; rapid iteration cycle</li>
+</ul>
+<p><strong>Why Tesla Optimus?</strong></p>
+<p>Tesla&#x27;s Optimus represents the <strong>commercial manufacturing-first</strong> approach:</p>
+<ul>
+<li class=""><strong>Most human-like morphology</strong> among available platforms</li>
+<li class=""><strong>Target mass production</strong> (cost democratization)</li>
+<li class=""><strong>Vertical integration</strong> (Tesla controls perception, control, manufacturing)</li>
+<li class=""><strong>Real-time learning</strong> from continuous operational deployment</li>
+</ul>
+<p><strong>Hardware Specifications</strong>:</p>
+<table><thead><tr><th>Specification</th><th>Value</th></tr></thead><tbody><tr><td><strong>Height</strong></td><td>173 cm (human-sized)</td></tr><tr><td><strong>Weight</strong></td><td>~56.7 kg</td></tr><tr><td><strong>Degrees of Freedom</strong></td><td>40 DoF (announced for full system)</td></tr><tr><td><strong>Arm Actuation</strong></td><td>7 DoF per arm (coordinated multi-joint)</td></tr><tr><td><strong>Hand Dexterity</strong></td><td>11 DoF per hand (multi-finger manipulation)</td></tr><tr><td><strong>Leg Actuation</strong></td><td>6 DoF per leg (coordinated bipedal locomotion)</td></tr><tr><td><strong>Torso &amp; Head</strong></td><td>7 DoF (spine flexibility, vision redundancy)</td></tr><tr><td><strong>Max Speed</strong></td><td>1.7 m/s (walking)</td></tr><tr><td><strong>Battery Life</strong></td><td>5+ hours per charge (target)</td></tr><tr><td><strong>Sensors</strong></td><td>54 cameras (full-body perception), IMU, proprioception (joint feedback), optional F/T sensors</td></tr><tr><td><strong>Compute</strong></td><td>Custom Tesla processors + NVidia Jetson integration (reported)</td></tr><tr><td><strong>Communication</strong></td><td>Tesla&#x27;s proprietary fleet management + optional ROS 2 bridge (via research partnerships)</td></tr><tr><td><strong>Actuation Type</strong></td><td>Electric motors with integrated sensing</td></tr><tr><td><strong>Safety Features</strong></td><td>Motor torque limits, emergency stops, redundant shutdown modes</td></tr></tbody></table>
+<p><strong>Why Optimus for This Course</strong>:</p>
+<ul>
+<li class="">Represents the future of mass-produced humanoids</li>
+<li class="">Learning control principles prepares you for mainstream robotics</li>
+<li class="">Community growing rapidly (forums, research publications)</li>
+</ul>
+<p><strong>Trade-offs</strong>:</p>
+<ul>
+<li class=""><strong>Pros</strong>: Human-sized, most relatable platform, vision-first approach</li>
+<li class=""><strong>Cons</strong>: Limited availability, proprietary software stack (not open-source), frequent design iterations</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="14-figure-01-dexterous-manipulation-focus">1.4 Figure 01 (Dexterous Manipulation Focus)<a href="#14-figure-01-dexterous-manipulation-focus" class="hash-link" aria-label="Direct link to 1.4 Figure 01 (Dexterous Manipulation Focus)" title="Direct link to 1.4 Figure 01 (Dexterous Manipulation Focus)" translate="no">​</a></h3>
+<p><strong>Key Characteristics</strong>:</p>
+<ul>
+<li class=""><strong>Cost</strong>: $150,000+ USD (prototype pricing; production target TBD)</li>
+<li class=""><strong>Availability</strong>: Limited to OpenAI partnership labs and selected research institutions</li>
+<li class=""><strong>Use Cases</strong>: Dexterous manipulation, object-centric learning, vision-language tasks</li>
+<li class=""><strong>Status</strong>: Early-stage commercial research (Series B funded)</li>
+</ul>
+<p><strong>Why Figure 01?</strong></p>
+<p>Figure 01 is designed around <strong>dexterous manipulation</strong> as the core learning objective:</p>
+<ul>
+<li class=""><strong>17-fingered hand</strong> (dexterous multi-finger gripper, not bipedal focus)</li>
+<li class=""><strong>OpenAI partnership</strong> means vision-language-action alignment (Module 4 focus)</li>
+<li class=""><strong>Object manipulation</strong> is primary task (complementary to locomotion learning)</li>
+</ul>
+<p><strong>Hardware Specifications</strong>:</p>
+<table><thead><tr><th>Specification</th><th>Value</th></tr></thead><tbody><tr><td><strong>Height</strong></td><td>173 cm</td></tr><tr><td><strong>Weight</strong></td><td>~60 kg</td></tr><tr><td><strong>Degrees of Freedom</strong></td><td>35+ DoF (focus on hand dexterity)</td></tr><tr><td><strong>Arm Actuation</strong></td><td>7 DoF per arm (collaborative design)</td></tr><tr><td><strong>Hand Dexterity</strong></td><td>17 DoF per hand (multi-finger dexterous gripper)</td></tr><tr><td><strong>Leg Actuation</strong></td><td>6 DoF per leg (basic bipedal, not optimized)</td></tr><tr><td><strong>Torso</strong></td><td>3 DoF</td></tr><tr><td><strong>Max Speed</strong></td><td>0.8 m/s (not optimized for speed)</td></tr><tr><td><strong>Battery Life</strong></td><td>3–4 hours</td></tr><tr><td><strong>Sensors</strong></td><td>RGB cameras (3x), depth sensors, hand-mounted force sensors, proprioception (joint feedback)</td></tr><tr><td><strong>Compute</strong></td><td>Onboard x86 + optional GPU module</td></tr><tr><td><strong>Communication</strong></td><td>ROS 2 interface (via research partnerships)</td></tr><tr><td><strong>Unique Feature</strong></td><td>Tactile sensing in fingertips (learning manipulation from touch)</td></tr><tr><td><strong>Safety Features</strong></td><td>Compliant hand design (soft gripper), torque limits, feedback control</td></tr></tbody></table>
+<p><strong>Why Figure 01 for This Course</strong>:</p>
+<ul>
+<li class="">Directly relevant for Module 4 (Vision-Language-Action learning)</li>
+<li class="">Demonstrates task-specific design (not general-purpose humanoid)</li>
+<li class="">Research partnerships provide cutting-edge learning environments</li>
+</ul>
+<p><strong>Trade-offs</strong>:</p>
+<ul>
+<li class=""><strong>Pros</strong>: Dexterous hand, vision-language partnership, research-focused</li>
+<li class=""><strong>Cons</strong>: Not available to general learners (limited access), locomotion not optimized, expensive</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="15-simulation-high-fidelity-virtual-environments">1.5 Simulation: High-Fidelity Virtual Environments<a href="#15-simulation-high-fidelity-virtual-environments" class="hash-link" aria-label="Direct link to 1.5 Simulation: High-Fidelity Virtual Environments" title="Direct link to 1.5 Simulation: High-Fidelity Virtual Environments" translate="no">​</a></h3>
+<p><strong>Key Characteristics</strong>:</p>
+<ul>
+<li class=""><strong>Cost</strong>: $0 (open-source); $500–$5,000 annually (commercial licenses optional)</li>
+<li class=""><strong>Availability</strong>: Immediate; no hardware lead time</li>
+<li class=""><strong>Use Cases</strong>: Learning fundamentals, safe experimentation, rapid prototyping, algorithm development</li>
+<li class=""><strong>Status</strong>: Industry standard for robotics training; used by Tesla, Boston Dynamics, academic labs</li>
+</ul>
+<p><strong>Why Simulation?</strong></p>
+<p>Simulation is <strong>not a consolation prize</strong>—it&#x27;s a professional-grade learning environment. Benefits include:</p>
+<ul>
+<li class=""><strong>Safety</strong>: No risk of robot damage or property damage</li>
+<li class=""><strong>Iteration speed</strong>: Algorithms test in minutes (vs. hours on physical hardware)</li>
+<li class=""><strong>Reproducibility</strong>: Exact conditions can be replayed and analyzed</li>
+<li class=""><strong>Cost</strong>: Single workstation $2,000–$5,000 (vs. $150,000+ for physical robot)</li>
+<li class=""><strong>Debugging</strong>: Access to ground truth (positions, forces, velocities with no sensor noise)</li>
+<li class=""><strong>Curriculum</strong>: Industry-standard in ML + robotics labs</li>
+</ul>
+<p><strong>Simulation Platforms</strong>:</p>
+<table><thead><tr><th>Platform</th><th>Best For</th><th>Cost</th><th>Physics Fidelity</th><th>ROS Integration</th></tr></thead><tbody><tr><td><strong>Gazebo Classic (ROS 1) / Gazebo (ROS 2)</strong></td><td>Research, learning, ROS workflows</td><td>Free</td><td>High</td><td>Native</td></tr><tr><td><strong>Isaac Sim (NVIDIA)</strong></td><td>Domain randomization, sim-to-real, vision</td><td>Free tier + commercial</td><td>Very High</td><td>ROS 2 bridge</td></tr><tr><td><strong>MuJoCo</strong></td><td>Control theory, manipulation, fast iteration</td><td>Free</td><td>High</td><td>Good</td></tr><tr><td><strong>CoppeliaSim</strong></td><td>Educational, multiple physics engines</td><td>Free/Commercial</td><td>Medium-High</td><td>Plugin-based</td></tr><tr><td><strong>PyBullet</strong></td><td>Python-first learning, rapid prototyping</td><td>Free</td><td>Good</td><td>Limited</td></tr></tbody></table>
+<p><strong>Recommended for This Course: Gazebo + Isaac Sim</strong></p>
+<ul>
+<li class=""><strong>Gazebo</strong>: Primary environment for Modules 1–2 (ROS 2 native, standard in industry)</li>
+<li class=""><strong>Isaac Sim</strong>: Primary for Module 3 (NVIDIA-optimized perception and sim-to-real)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-2-learning-path-trade-offs">Part 2: Learning Path Trade-offs<a href="#part-2-learning-path-trade-offs" class="hash-link" aria-label="Direct link to Part 2: Learning Path Trade-offs" title="Direct link to Part 2: Learning Path Trade-offs" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview-1">Overview<a href="#overview-1" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h3>
+<p>Your choice of platform shapes not just what you learn, but <strong>how</strong> you learn. We&#x27;ll examine three primary learning paths:</p>
+<ol>
+<li class=""><strong>Simulation-First Path</strong>: Start in Gazebo/Isaac, deploy to physical only if available</li>
+<li class=""><strong>Physical-First Path</strong>: Learn directly on hardware (Unitree, Spot, Optimus in research partnerships)</li>
+<li class=""><strong>Hybrid Path</strong>: Start in simulation, integrate physical testing incrementally</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="path-1-simulation-first-recommended-for-most-learners">Path 1: Simulation-First (Recommended for Most Learners)<a href="#path-1-simulation-first-recommended-for-most-learners" class="hash-link" aria-label="Direct link to Path 1: Simulation-First (Recommended for Most Learners)" title="Direct link to Path 1: Simulation-First (Recommended for Most Learners)" translate="no">​</a></h3>
+<p><strong>Ideal For</strong>:</p>
+<ul>
+<li class="">Learners without immediate hardware access</li>
+<li class="">Those prioritizing breadth of concepts over depth on one platform</li>
+<li class="">Budget-conscious learners</li>
+<li class="">Educators teaching groups (one simulator per workstation)</li>
+</ul>
+<p><strong>Learning Trajectory</strong>:</p>
+<table><thead><tr><th>Module</th><th>Environment</th><th>Key Focus</th></tr></thead><tbody><tr><td><strong>Module 1: ROS 2</strong></td><td>Gazebo (simulated robot)</td><td>Nodes, topics, services, middleware</td></tr><tr><td><strong>Module 2: Simulation &amp; Perception</strong></td><td>Gazebo + Isaac Sim</td><td>Camera simulation, sensor fusion, noise models</td></tr><tr><td><strong>Module 3: Isaac &amp; Sim-to-Real</strong></td><td>Isaac Sim + domain randomization</td><td>Physics-accurate training, real-world deployment prep</td></tr><tr><td><strong>Module 4: Vision-Language-Action</strong></td><td>Isaac Sim + offline learning</td><td>Collect simulated data, train models</td></tr><tr><td><strong>Capstone</strong></td><td>Real hardware (if available) OR simulation deployment</td><td>Apply full pipeline</td></tr></tbody></table>
+<p><strong>System Requirements for Simulation-First</strong>:</p>
+<table><thead><tr><th>Component</th><th>Minimum</th><th>Recommended</th><th>Premium</th></tr></thead><tbody><tr><td><strong>CPU</strong></td><td>Intel i5-10th gen or AMD Ryzen 5 5000</td><td>Intel i7-12th gen or AMD Ryzen 7 5000</td><td>Intel i9 / AMD Ryzen 9</td></tr><tr><td><strong>GPU</strong></td><td>NVIDIA GTX 1650 (4GB VRAM)</td><td>NVIDIA RTX 3060 (12GB)</td><td>NVIDIA RTX 4090 (24GB)</td></tr><tr><td><strong>RAM</strong></td><td>16 GB</td><td>32 GB</td><td>64 GB</td></tr><tr><td><strong>Storage</strong></td><td>256 GB SSD (OS + core tools)</td><td>512 GB SSD</td><td>1 TB+ SSD</td></tr><tr><td><strong>OS</strong></td><td>Ubuntu 22.04 LTS (recommended)</td><td>Ubuntu 22.04 LTS</td><td>Ubuntu 22.04 LTS + Windows dual-boot</td></tr><tr><td><strong>Network</strong></td><td>Ethernet or WiFi 6</td><td>Gigabit Ethernet (local ROS networks)</td><td>Gigabit + backup WiFi</td></tr><tr><td><strong>Monitor</strong></td><td>1080p (24&quot;)</td><td>1440p (27&quot;) or dual 1080p</td><td>4K or ultrawide (high-fidelity visuals)</td></tr></tbody></table>
+<p><strong>Software Stack</strong> (All Free):</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Core System</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ubuntu-22.04-lts              # Operating system</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ros2-humble or ros2-iron      # Middleware (Modules 1-2)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Simulation</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">gazebo-sim                    # Robot simulator (Modules 1-2)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">isaac-sim (free tier)         # NVIDIA physics + perception (Module 3)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Perception &amp; ML</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">opencv                        # Computer vision</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">yolo8 or detection models     # Object detection</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">transformers (huggingface)    # Vision-language models (Module 4)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Supporting Tools</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">python3.10+                   # Programming language</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">colcon                        # Build system for ROS 2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">git + github                  # Version control</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">vscode or pycharm             # IDE</span><br></span></code></pre></div></div>
+<p><strong>Cost Estimate</strong>:</p>
+<ul>
+<li class=""><strong>Hardware</strong>: $2,000–$5,000 (one-time)</li>
+<li class=""><strong>Software</strong>: $0 (all open-source)</li>
+<li class=""><strong>Annual</strong>: $0 (no subscriptions required)</li>
+<li class=""><strong>Per-course cost</strong>: ~$400–$1,000 amortized across 4 courses</li>
+</ul>
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li class="">Low barrier to entry (economically and logistically)</li>
+<li class="">Safe experimentation environment</li>
+<li class="">Access to ground-truth data (helps debugging)</li>
+<li class="">Standard in industry ML/robotics labs</li>
+<li class="">Can parallelize learning (multiple students on one server)</li>
+</ul>
+<p><strong>Disadvantages</strong>:</p>
+<ul>
+<li class="">Sim-to-real gap (physics differences, sensor noise not fully captured)</li>
+<li class="">No tactile feedback (can&#x27;t learn grip pressure through touch)</li>
+<li class="">Harder to internalize embodied understanding (body awareness)</li>
+<li class="">Require careful domain randomization to bridge gap</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="path-2-physical-first-limited-availability">Path 2: Physical-First (Limited Availability)<a href="#path-2-physical-first-limited-availability" class="hash-link" aria-label="Direct link to Path 2: Physical-First (Limited Availability)" title="Direct link to Path 2: Physical-First (Limited Availability)" translate="no">​</a></h3>
+<p><strong>Ideal For</strong>:</p>
+<ul>
+<li class="">Learners with hardware access (institutional partnerships)</li>
+<li class="">Those prioritizing embodied understanding and real-time feedback</li>
+<li class="">Engineers transitioning from simulation to production</li>
+</ul>
+<p><strong>Learning Trajectory</strong>:</p>
+<table><thead><tr><th>Module</th><th>Environment</th><th>Key Focus</th></tr></thead><tbody><tr><td><strong>Module 1: ROS 2</strong></td><td>Live Unitree/Spot robot</td><td>Nodes, topics, real sensor feedback</td></tr><tr><td><strong>Module 2: Simulation &amp; Perception</strong></td><td>Physical sensors + Gazebo for algorithm testing</td><td>Real camera images, LiDAR scans</td></tr><tr><td><strong>Module 3: Isaac &amp; Sim-to-Real</strong></td><td>Simulation with real-world calibration</td><td>Transfer learning from sim to physical</td></tr><tr><td><strong>Module 4: Vision-Language-Action</strong></td><td>Real robot deployment</td><td>Collect physical interaction data</td></tr><tr><td><strong>Capstone</strong></td><td>Real hardware</td><td>Embodied task learning</td></tr></tbody></table>
+<p><strong>System Requirements for Physical-First</strong>:</p>
+<table><thead><tr><th>Requirement</th><th>Details</th></tr></thead><tbody><tr><td><strong>Robot Hardware</strong></td><td>Unitree G1 ($150–200K) OR Spot (lease $150–180K/year)</td></tr><tr><td><strong>Workstation (optional but recommended)</strong></td><td>Same as Simulation-First (for offline algorithm dev)</td></tr><tr><td><strong>Safety Environment</strong></td><td>Gated area (20m × 20m minimum), safety rails, collision detection</td></tr><tr><td><strong>Network</strong></td><td>5 GHz WiFi or Ethernet back to control computer</td></tr><tr><td><strong>Power</strong></td><td>110V + higher amp capacity (robot charging + workstation)</td></tr><tr><td><strong>Insurance</strong></td><td>Recommended for expensive hardware</td></tr><tr><td><strong>Maintenance</strong></td><td>Budget for parts, wear-and-tear, repair services</td></tr></tbody></table>
+<p><strong>Annual Operating Cost (Unitree G1)</strong>:</p>
+<ul>
+<li class="">Lease or purchase depreciation: $25,000–$40,000/year</li>
+<li class="">Electricity + repairs: $2,000–$5,000/year</li>
+<li class="">Software/tools: $0 (open-source)</li>
+<li class=""><strong>Total: $27,000–$45,000/year for one robot</strong></li>
+</ul>
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li class="">Real-time feedback accelerates embodied understanding</li>
+<li class="">Immediate sim-to-real transfer (algorithms tested on actual hardware)</li>
+<li class="">Sensor noise and dynamics are intrinsic (not optional)</li>
+<li class="">Publish-ready research quickly (papers from real deployments)</li>
+<li class="">Team morale (robot manipulation is engaging)</li>
+</ul>
+<p><strong>Disadvantages</strong>:</p>
+<ul>
+<li class="">High barrier to entry (capital + maintenance cost)</li>
+<li class="">Safety constraints (slower iteration, need for supervised operation)</li>
+<li class="">Hardware downtime (repairs delay learning)</li>
+<li class="">Logistics (storage, transportation, setup)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="path-3-hybrid-recommended-for-institutions">Path 3: Hybrid (Recommended for Institutions)<a href="#path-3-hybrid-recommended-for-institutions" class="hash-link" aria-label="Direct link to Path 3: Hybrid (Recommended for Institutions)" title="Direct link to Path 3: Hybrid (Recommended for Institutions)" translate="no">​</a></h3>
+<p><strong>Ideal For</strong>:</p>
+<ul>
+<li class="">University programs with hardware and lab space</li>
+<li class="">Corporate research teams</li>
+<li class="">Bootcamps combining classroom theory with capstone hardware</li>
+</ul>
+<p><strong>Structure</strong>:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Module 1-2: Simulation-based learning (desktop/laptop)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Checkpoint: Algorithm testing on real sensors</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Module 3: Gazebo + Isaac simulation with real calibration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Module 4: Offline learning on simulated data + real robot testing</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Capstone: Full deployment on physical hardware</span><br></span></code></pre></div></div>
+<p><strong>Cost Estimate (for institution supporting 10 learners)</strong>:</p>
+<ul>
+<li class=""><strong>Hardware</strong>: 1–2 robots ($150–400K) + 10 workstations ($20–50K)</li>
+<li class=""><strong>Software</strong>: $0</li>
+<li class=""><strong>Space</strong>: Lab (500 sq ft minimum)</li>
+<li class=""><strong>Annual</strong>: $30–50K (maintenance, power, insurance)</li>
+<li class=""><strong>Per-student cost</strong>: $3–5K annually</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-3-hardware-requirements-and-setup">Part 3: Hardware Requirements and Setup<a href="#part-3-hardware-requirements-and-setup" class="hash-link" aria-label="Direct link to Part 3: Hardware Requirements and Setup" title="Direct link to Part 3: Hardware Requirements and Setup" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="31-recommended-hardware-tier-for-individual-learners">3.1 Recommended Hardware Tier for Individual Learners<a href="#31-recommended-hardware-tier-for-individual-learners" class="hash-link" aria-label="Direct link to 3.1 Recommended Hardware Tier for Individual Learners" title="Direct link to 3.1 Recommended Hardware Tier for Individual Learners" translate="no">​</a></h3>
+<p><strong>Use Case</strong>: Running Modules 1–4 with simulation + preparing for physical deployment</p>
+<p><strong>Recommended Build ($3,500–$5,000)</strong>:</p>
+<table><thead><tr><th>Component</th><th>Model</th><th>Price</th><th>Rationale</th></tr></thead><tbody><tr><td><strong>CPU</strong></td><td>Intel i7-13700K or Ryzen 7 7700X</td><td>$400–500</td><td>12+ cores handle Gazebo + Isaac simultaneously</td></tr><tr><td><strong>Motherboard</strong></td><td>Mid-range B series</td><td>$150–200</td><td>Standard ATX, reliable</td></tr><tr><td><strong>GPU</strong></td><td>NVIDIA RTX 3070 Ti or RTX 4070</td><td>$800–1,200</td><td>12GB VRAM; Isaac Sim + perception models</td></tr><tr><td><strong>RAM</strong></td><td>32 GB DDR5</td><td>$200–300</td><td>Gazebo + Isaac + Python models (tight at 32GB, comfortable)</td></tr><tr><td><strong>Storage (OS)</strong></td><td>Samsung 990 Pro 1TB NVMe</td><td>$100–150</td><td>Fast boot, ROS build speed</td></tr><tr><td><strong>Storage (Data)</strong></td><td>WD Red Pro 8TB (NAS or external)**</td><td>$150–200</td><td>Store training datasets, rosbags</td></tr><tr><td><strong>Power Supply</strong></td><td>750W 80+ Gold</td><td>$100–150</td><td>Stable under sustained GPU load</td></tr><tr><td><strong>Case + Cooling</strong></td><td>Noctua cooler + case with airflow</td><td>$150–250</td><td>Temperature stability (avoid thermal throttling)</td></tr><tr><td><strong>Monitor</strong></td><td>27&quot; 1440p 144Hz</td><td>$300–400</td><td>Real estate for rviz + IDE + terminals</td></tr><tr><td><strong>Peripherals</strong></td><td>Keyboard, mouse, 6–port USB hub</td><td>$100–150</td><td>Comfort + robot sensor connections</td></tr><tr><td><strong>Networking</strong></td><td>WiFi 6 + Ethernet</td><td>Included</td><td>Reliable ROS network communication</td></tr><tr><td><strong>TOTAL</strong></td><td></td><td><strong>~$3,500–5,000</strong></td><td>Professional-grade learning workstation</td></tr></tbody></table>
+<p><strong>Budget Build ($1,500–$2,500)</strong> (if upgrading existing PC):</p>
+<ul>
+<li class="">Keep existing CPU if Intel i5-10th+ or Ryzen 5 5000+</li>
+<li class="">Upgrade GPU to RTX 3060 (12GB, ~$400–500)</li>
+<li class="">Add 16 GB RAM if available (bring total to 32GB)</li>
+<li class="">Add 512 GB SSD for ROS workspace</li>
+<li class=""><strong>Total upgrade</strong>: $1,500–2,000</li>
+</ul>
+<p><strong>Laptop Alternative ($2,000–$3,000)</strong> (less ideal, but workable):</p>
+<ul>
+<li class="">Dell XPS 15, MacBook Pro 16&quot; with RTX 4070 equivalent, or ASUS ROG Zephyrus</li>
+<li class=""><strong>Trade-off</strong>: Portability vs. upgrade potential and cooling</li>
+<li class="">Works for Modules 1–2; tight for Module 3 (Isaac Sim)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="32-optional-jetson-orin-nano-onboard-compute-for-hardware">3.2 Optional: Jetson Orin Nano (Onboard Compute for Hardware)<a href="#32-optional-jetson-orin-nano-onboard-compute-for-hardware" class="hash-link" aria-label="Direct link to 3.2 Optional: Jetson Orin Nano (Onboard Compute for Hardware)" title="Direct link to 3.2 Optional: Jetson Orin Nano (Onboard Compute for Hardware)" translate="no">​</a></h3>
+<p><strong>Context</strong>: If you have access to a physical robot or plan to develop on real hardware, the Jetson Orin Nano is a common choice for onboard compute.</p>
+<p><strong>Jetson Orin Nano Specifications</strong>:</p>
+<table><thead><tr><th>Specification</th><th>Value</th></tr></thead><tbody><tr><td><strong>CPU</strong></td><td>6-core ARM64 (Cortex-A78AE)</td></tr><tr><td><strong>GPU</strong></td><td>1024 NVIDIA CUDA cores (Turing architecture)</td></tr><tr><td><strong>RAM</strong></td><td>8 GB LPDDR5 (shared CPU/GPU)</td></tr><tr><td><strong>Storage</strong></td><td>microSD card (UHS-II, 128–512 GB recommended)</td></tr><tr><td><strong>Power</strong></td><td>5–10 W typical; 25 W peak</td></tr><tr><td><strong>Connectivity</strong></td><td>Gigabit Ethernet, WiFi 6e, Bluetooth 5.3</td></tr><tr><td><strong>Interfaces</strong></td><td>40-pin GPIO, 2x USB 3.1, I2C, SPI, UART</td></tr><tr><td><strong>ROS 2 Support</strong></td><td>Full Humble/Iron support (with some optimization)</td></tr><tr><td><strong>Cost</strong></td><td>$199 (8GB) or $99 (4GB)</td></tr><tr><td><strong>Use Case</strong></td><td>Onboard compute for edge inference; ideal for lighter robots or sensor fusion</td></tr></tbody></table>
+<p><strong>Why Jetson Orin Nano?</strong></p>
+<ul>
+<li class=""><strong>Affordable edge AI</strong>: Run vision models at 15–30 fps (object detection, segmentation)</li>
+<li class=""><strong>Power-efficient</strong>: 5–10W typical (fits robot battery budget)</li>
+<li class=""><strong>ROS 2 native</strong>: Seamless integration with Module 1 concepts</li>
+<li class=""><strong>Industry standard</strong>: Used in research robots, small commercial systems</li>
+</ul>
+<p><strong>Limitations</strong>:</p>
+<ul>
+<li class=""><strong>Not sufficient for</strong>: Heavy computation (full model training, 3D reconstruction)</li>
+<li class=""><strong>Slow for</strong>: Large language models, real-time planning on high-DoF systems</li>
+<li class=""><strong>Suitable for</strong>: Edge inference, sensor fusion, lightweight control loops</li>
+</ul>
+<p><strong>Typical Deployment</strong>:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Workstation (RTX 3070 Ti)     Remote robot (Jetson Orin Nano)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├─ Training algorithms      ├─ Sensor acquisition</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├─ Data collection         ├─ Real-time control loops</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├─ Model optimization      ├─ Vision inference (edge)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└─ Testing in Gazebo       └─ Communication back to workstation</span><br></span></code></pre></div></div>
+<p><strong>Cost</strong>: $199 (module only)
+<strong>Total robot compute setup</strong>: ~$400–600 (with power, storage, cooling)</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="33-system-requirements-summary">3.3 System Requirements Summary<a href="#33-system-requirements-summary" class="hash-link" aria-label="Direct link to 3.3 System Requirements Summary" title="Direct link to 3.3 System Requirements Summary" translate="no">​</a></h3>
+<p><strong>Minimum (can struggle with Module 3 Isaac)</strong>:</p>
+<ul>
+<li class="">Ubuntu 22.04 LTS</li>
+<li class="">Intel i5 or Ryzen 5 (8 cores)</li>
+<li class="">RTX 2080 or RTX 3060 (8+ GB VRAM)</li>
+<li class="">16 GB RAM</li>
+<li class="">512 GB SSD</li>
+</ul>
+<p><strong>Recommended (comfortable for all modules)</strong>:</p>
+<ul>
+<li class="">Ubuntu 22.04 LTS</li>
+<li class="">Intel i7 or Ryzen 7 (12+ cores)</li>
+<li class="">RTX 3070 Ti or RTX 4070 (12+ GB VRAM)</li>
+<li class="">32 GB RAM</li>
+<li class="">1 TB SSD + external storage</li>
+</ul>
+<p><strong>Premium (future-proof)</strong>:</p>
+<ul>
+<li class="">Ubuntu 22.04 LTS + Windows 11 (dual-boot)</li>
+<li class="">Intel i9 or Ryzen 9</li>
+<li class="">RTX 4090 or H100 (24+ GB VRAM)</li>
+<li class="">64 GB RAM</li>
+<li class="">2 TB NVMe SSD + 8 TB data storage</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-4-comparison-matrix">Part 4: Comparison Matrix<a href="#part-4-comparison-matrix" class="hash-link" aria-label="Direct link to Part 4: Comparison Matrix" title="Direct link to Part 4: Comparison Matrix" translate="no">​</a></h2>
+<p>This matrix helps you compare platforms across key dimensions:</p>
+<table><thead><tr><th>Criterion</th><th>Unitree G1</th><th>Spot</th><th>Optimus</th><th>Figure 01</th><th>Gazebo Sim</th><th>Isaac Sim</th></tr></thead><tbody><tr><td><strong>Cost (Entry)</strong></td><td>$150K</td><td>$90K (lease)</td><td>$25K (target)</td><td>$150K+</td><td>Free</td><td>Free</td></tr><tr><td><strong>Availability</strong></td><td>200+ institutions</td><td>Commercial leasing</td><td>Limited proto</td><td>Research only</td><td>Immediate</td><td>Immediate</td></tr><tr><td><strong>DoF (Arms)</strong></td><td>7/arm</td><td>0 (no arms)</td><td>7/arm</td><td>7/arm</td><td>Configurable</td><td>Configurable</td></tr><tr><td><strong>DoF (Hands)</strong></td><td>Gripper</td><td>Gripper</td><td>11/hand</td><td>17/hand</td><td>Configurable</td><td>Configurable</td></tr><tr><td><strong>Locomotion</strong></td><td>Bipedal</td><td>Quadrupedal</td><td>Bipedal</td><td>Basic bipedal</td><td>Configurable</td><td>Configurable</td></tr><tr><td><strong>Best For</strong></td><td>Research, manipulation</td><td>Inspection, learning gait</td><td>Manufacturing, learning</td><td>Dexterity, VLM</td><td>Learning theory</td><td>Domain randomization</td></tr><tr><td><strong>ROS 2 Native</strong></td><td>Yes</td><td>Partial (SDK)</td><td>Partial (proprietary)</td><td>Yes (via partners)</td><td>Yes (native)</td><td>ROS 2 bridge</td></tr><tr><td><strong>Sim-to-Real Path</strong></td><td>Existing algorithms</td><td>Documented procedures</td><td>Vertical integration</td><td>Research partnerships</td><td>→ Physical deployment</td><td>Optimized for this</td></tr><tr><td><strong>Open-Source</strong></td><td>Yes (hardware + firmware)</td><td>No (SDK only)</td><td>No (proprietary)</td><td>No (proprietary)</td><td>Full open-source</td><td>Partial (licensing)</td></tr><tr><td><strong>Learning Curve</strong></td><td>Steep (full system)</td><td>Moderate (API-first)</td><td>Moderate</td><td>Moderate-steep</td><td>Gentle (standard in ML)</td><td>Moderate (NVIDIA ecosystem)</td></tr><tr><td><strong>Community Size</strong></td><td>Growing (200+ labs)</td><td>Large (Boston Dynamics)</td><td>Rapidly growing</td><td>Niche (research)</td><td>Huge (ROS ecosystem)</td><td>Growing (NVIDIA)</td></tr><tr><td><strong>Time to &quot;First Motion&quot;</strong></td><td>Weeks–months</td><td>Days–weeks (with API)</td><td>Weeks</td><td>Weeks</td><td>Hours</td><td>Hours</td></tr><tr><td><strong>Tactile Feedback</strong></td><td>Optional (force sensors)</td><td>Pressure sensors (feet)</td><td>Motor current sensing</td><td>Finger sensors</td><td>Simulated/configurable</td><td>Simulated/configurable</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-5-gotchas-and-common-challenges">Part 5: Gotchas and Common Challenges<a href="#part-5-gotchas-and-common-challenges" class="hash-link" aria-label="Direct link to Part 5: Gotchas and Common Challenges" title="Direct link to Part 5: Gotchas and Common Challenges" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="challenge-1-sim-to-real-gap">Challenge 1: Sim-to-Real Gap<a href="#challenge-1-sim-to-real-gap" class="hash-link" aria-label="Direct link to Challenge 1: Sim-to-Real Gap" title="Direct link to Challenge 1: Sim-to-Real Gap" translate="no">​</a></h3>
+<p><strong>What Is It?</strong>
+Algorithms developed in simulation often fail in the real world due to:</p>
+<ul>
+<li class="">Friction coefficient differences</li>
+<li class="">Sensor noise (cameras, IMUs, joint encoders)</li>
+<li class="">Unmodeled dynamics (backlash, motor saturation, latency)</li>
+<li class="">Environmental factors (lighting, temperature, calibration drift)</li>
+</ul>
+<p><strong>How to Mitigate</strong>:</p>
+<ol>
+<li class=""><strong>Use Isaac Sim</strong>: Includes photorealistic rendering and accurate physics</li>
+<li class=""><strong>Domain randomization</strong>: Train on many random simulation variants</li>
+<li class=""><strong>Real-world validation</strong>: Test incrementally on real hardware in bounded scenarios</li>
+<li class=""><strong>System identification</strong>: Measure real robot parameters and update simulation</li>
+</ol>
+<p><strong>Module 3 addresses this explicitly</strong> through sim-to-real transfer techniques.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="challenge-2-networking-issues-with-robot-hardware">Challenge 2: Networking Issues with Robot Hardware<a href="#challenge-2-networking-issues-with-robot-hardware" class="hash-link" aria-label="Direct link to Challenge 2: Networking Issues with Robot Hardware" title="Direct link to Challenge 2: Networking Issues with Robot Hardware" translate="no">​</a></h3>
+<p><strong>What Is It?</strong>
+ROS 2 communication between workstation and robot often drops or lags if:</p>
+<ul>
+<li class="">WiFi signal is weak or congested</li>
+<li class="">Network latency is high (&gt;50 ms)</li>
+<li class="">Firewall rules block UDP multicast (default ROS 2 transport)</li>
+</ul>
+<p><strong>How to Mitigate</strong>:</p>
+<ol>
+<li class=""><strong>Use Gigabit Ethernet</strong> when possible (hardwired connection reduces latency)</li>
+<li class=""><strong>Configure ROS 2 middleware</strong>: Switch to DDS with faster settings for your network</li>
+<li class=""><strong>Test latency</strong>: Use <code>ping</code> and <code>rostopic hz</code> to monitor message rates</li>
+<li class=""><strong>Dedicated WiFi</strong>: Use 5 GHz band or a separate access point for robot network</li>
+</ol>
+<p><strong>Reference</strong>: ROS 2 networking documentation (linked in Module 1)</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="challenge-3-gpu-memory-constraints-isaac-sim--training">Challenge 3: GPU Memory Constraints (Isaac Sim + Training)<a href="#challenge-3-gpu-memory-constraints-isaac-sim--training" class="hash-link" aria-label="Direct link to Challenge 3: GPU Memory Constraints (Isaac Sim + Training)" title="Direct link to Challenge 3: GPU Memory Constraints (Isaac Sim + Training)" translate="no">​</a></h3>
+<p><strong>What Is It?</strong>
+Running Isaac Sim while training deep learning models can exhaust VRAM:</p>
+<ul>
+<li class="">Isaac Sim: 6–8 GB (with high-fidelity rendering)</li>
+<li class="">Model training: 4–12 GB (depending on batch size, model size)</li>
+<li class="">System overhead: 2–4 GB</li>
+</ul>
+<p><strong>How to Mitigate</strong>:</p>
+<ol>
+<li class=""><strong>Separate workstations</strong>: Use one PC for simulation (record data), another for training</li>
+<li class=""><strong>Gradient checkpointing</strong>: Reduces memory during training (~30% reduction)</li>
+<li class=""><strong>Lower batch size</strong>: Train with smaller batches (slower but fits in memory)</li>
+<li class=""><strong>Use cloud GPUs</strong>: For training, outsource to Lambda Labs, RunPod ($0.30–$2/hour)</li>
+</ol>
+<p><strong>Recommended</strong>: RTX 3070 Ti (12 GB) minimum; RTX 4090 (24 GB) comfortable</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="challenge-4-ubuntu-2204-compatibility-issues">Challenge 4: Ubuntu 22.04 Compatibility Issues<a href="#challenge-4-ubuntu-2204-compatibility-issues" class="hash-link" aria-label="Direct link to Challenge 4: Ubuntu 22.04 Compatibility Issues" title="Direct link to Challenge 4: Ubuntu 22.04 Compatibility Issues" translate="no">​</a></h3>
+<p><strong>What Is It?</strong>
+Some older ROS 1 packages or legacy hardware drivers may not support Ubuntu 22.04.</p>
+<p><strong>How to Mitigate</strong>:</p>
+<ol>
+<li class=""><strong>Stick with Ubuntu 22.04 for this course</strong>: All modules are tested on 22.04</li>
+<li class=""><strong>Use ROS 2 packages only</strong> (not ROS 1, which is end-of-life)</li>
+<li class=""><strong>Check hardware driver support</strong>: Before purchasing equipment, verify Ubuntu 22.04 drivers exist</li>
+<li class=""><strong>Virtual machine fallback</strong>: Run Ubuntu 22.04 in VirtualBox (slower but compatible)</li>
+</ol>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="challenge-5-cost-and-hardware-availability">Challenge 5: Cost and Hardware Availability<a href="#challenge-5-cost-and-hardware-availability" class="hash-link" aria-label="Direct link to Challenge 5: Cost and Hardware Availability" title="Direct link to Challenge 5: Cost and Hardware Availability" translate="no">​</a></h3>
+<p><strong>What Is It?</strong></p>
+<ul>
+<li class="">Physical robots are expensive ($90K–$200K)</li>
+<li class="">Specialized GPUs (RTX 4090) have long lead times</li>
+<li class="">Educational discounts may apply, but vary by vendor</li>
+</ul>
+<p><strong>How to Mitigate</strong>:</p>
+<ol>
+<li class=""><strong>Start with simulation</strong>: Modules 1–3 fully functional without hardware</li>
+<li class=""><strong>Seek institutional partnerships</strong>: Universities often have robot labs open to learners</li>
+<li class=""><strong>Join research groups</strong>: Collaboration provides hardware access + mentorship</li>
+<li class=""><strong>Budget planning</strong>: Save for hardware; consider lease vs. purchase options</li>
+<li class=""><strong>Used market</strong>: Secondary market for robots exists (check robotics forums)</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="part-6-summary">Part 6: Summary<a href="#part-6-summary" class="hash-link" aria-label="Direct link to Part 6: Summary" title="Direct link to Part 6: Summary" translate="no">​</a></h2>
+<p><strong>Key Takeaways</strong>:</p>
+<ol>
+<li class="">
+<p><strong>Platform Abundance</strong>: You have access to world-class hardware and simulation tools. Your choice should align with your goals and constraints.</p>
+</li>
+<li class="">
+<p><strong>Simulation is Professional</strong>: Learning in Gazebo/Isaac Sim is not a consolation prize—it&#x27;s how Tesla, Boston Dynamics, and academic labs train algorithms.</p>
+</li>
+<li class="">
+<p><strong>Sim-to-Real Transfer Works</strong>: With proper domain randomization and real-world validation, simulation-trained algorithms transfer effectively to physical robots.</p>
+</li>
+<li class="">
+<p><strong>Hybrid is Strongest</strong>: Start in simulation (safe, fast, iterative), validate on hardware (real-world grounding), repeat.</p>
+</li>
+<li class="">
+<p><strong>Hardware Matters for Embodiment</strong>: If possible, get real robot time, even briefly, to internalize how physical constraints shape behavior.</p>
+</li>
+<li class="">
+<p><strong>Cost Scales with Capability</strong>: $0 (Gazebo) to $5,000 (workstation) to $200K (physical robot) each unlock different learning opportunities.</p>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-next">What&#x27;s Next?<a href="#whats-next" class="hash-link" aria-label="Direct link to What&#x27;s Next?" title="Direct link to What&#x27;s Next?" translate="no">​</a></h2>
+<p>Now that you understand the platforms and learning paths available, <strong>Module 0.4</strong> guides you through <strong>choosing your path</strong>. You&#x27;ll assess your goals, budget, and timeline, then commit to a learning plan.</p>
+<p>After Module 0, you&#x27;ll move into <strong>Module 1: ROS 2 Foundations</strong>, where you&#x27;ll apply these concepts in code.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quiz-test-your-understanding">Quiz: Test Your Understanding<a href="#quiz-test-your-understanding" class="hash-link" aria-label="Direct link to Quiz: Test Your Understanding" title="Direct link to Quiz: Test Your Understanding" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-1-platform-selection">Question 1: Platform Selection<a href="#question-1-platform-selection" class="hash-link" aria-label="Direct link to Question 1: Platform Selection" title="Direct link to Question 1: Platform Selection" translate="no">​</a></h3>
+<p><strong>You&#x27;re learning robotics but have limited budget ($2,000) and no institutional hardware access. Which learning path is most appropriate for you?</strong></p>
+<p>a) Purchase a Unitree G1 and learn on physical hardware exclusively.</p>
+<p>b) Build a simulation workstation with recommended specs and use Gazebo/Isaac Sim for Modules 1–3.</p>
+<p>c) Use only free cloud GPUs (Google Colab) without a local workstation.</p>
+<p>d) Wait until hardware prices drop before beginning.</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Show Answer</summary><div><div class="collapsibleContent_i85q"><p><strong>Correct Answer: B</strong></p><p><strong>Rationale</strong>:</p><ul>
+<li class=""><strong>A is wrong</strong>: $150K–$200K for Unitree G1 far exceeds your budget.</li>
+<li class=""><strong>B is correct</strong>: A $2,000–$3,000 workstation is realistic and sufficient for simulation-based learning. You&#x27;ll complete Modules 1–3 fully and be prepared for physical deployment later.</li>
+<li class=""><strong>C is wrong</strong>: Cloud GPUs have limitations (session timeouts, network latency for ROS 2), and lack persistent workspace for large datasets.</li>
+<li class=""><strong>D is wrong</strong>: Hardware won&#x27;t drop significantly in price soon; you can start learning now with simulation.</li>
+</ul><p><strong>Key Point</strong>: Simulation-first path is the recommended entry point for most learners. You can always add physical hardware later.</p></div></div></details>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-2-sim-to-real-trade-offs">Question 2: Sim-to-Real Trade-offs<a href="#question-2-sim-to-real-trade-offs" class="hash-link" aria-label="Direct link to Question 2: Sim-to-Real Trade-offs" title="Direct link to Question 2: Sim-to-Real Trade-offs" translate="no">​</a></h3>
+<p><strong>Why is the sim-to-real gap challenging? (Select all that apply)</strong></p>
+<p>a) Simulation cannot run physics engines accurately.</p>
+<p>b) Real-world sensors have noise and calibration drift that simulators don&#x27;t fully capture.</p>
+<p>c) Friction, motor saturation, and cable backlash differ between simulation and reality.</p>
+<p>d) Real robots are always slower than simulated ones.</p>
+<p>e) Domain randomization is the only solution.</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Show Answer</summary><div><div class="collapsibleContent_i85q"><p><strong>Correct Answers: B, C</strong></p><p><strong>Explanation</strong>:</p><ul>
+<li class="">
+<p><strong>A is wrong</strong>: Modern physics engines (Gazebo, Isaac, MuJoCo) are quite accurate. The issue isn&#x27;t accuracy, but <em>incompleteness</em>.</p>
+</li>
+<li class="">
+<p><strong>B is correct</strong>: Real cameras have noise, LiDARs have measurement errors, and calibration drifts over time. Simulators abstract these away by default.</p>
+</li>
+<li class="">
+<p><strong>C is correct</strong>: Real motors have saturation limits, friction is nonlinear, and cables have backlash. These are hard to model perfectly and cause algorithms to behave differently.</p>
+</li>
+<li class="">
+<p><strong>D is wrong</strong>: Speed depends on the algorithm, not the platform. A slow simulator might compute faster than a real robot&#x27;s actuators.</p>
+</li>
+<li class="">
+<p><strong>E is wrong</strong>: Domain randomization helps, but it&#x27;s not a silver bullet. Real-world testing is still necessary.</p>
+</li>
+</ul><p><strong>Key Point</strong>: The sim-to-real gap is a <em>physics and sensing gap</em>, not a computational gap. <strong>Module 3</strong> teaches you to bridge this through Isaac Sim&#x27;s fidelity and systematic testing.</p></div></div></details>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-3-hardware-requirements-and-scaling">Question 3: Hardware Requirements and Scaling<a href="#question-3-hardware-requirements-and-scaling" class="hash-link" aria-label="Direct link to Question 3: Hardware Requirements and Scaling" title="Direct link to Question 3: Hardware Requirements and Scaling" translate="no">​</a></h3>
+<p><strong>You&#x27;re building a simulation lab for 10 students. Which approach minimizes cost while maintaining effectiveness?</strong></p>
+<p>a) Purchase 10 individual high-end workstations ($5,000 each).</p>
+<p>b) Purchase 1 server GPU machine ($8,000) and share it via remote desktop for simulation work; local laptops for IDE/code development.</p>
+<p>c) Use cloud GPU rentals exclusively; no local hardware.</p>
+<p>d) Purchase 5 mid-range workstations ($3,000 each) and pair students.</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Show Answer</summary><div><div class="collapsibleContent_i85q"><p><strong>Correct Answer: B</strong> (or D, with trade-offs)</p><p><strong>Rationale</strong>:</p><ul>
+<li class="">
+<p><strong>A is inefficient</strong>: 10 independent workstations are overkill; GPU is shared resource.</p>
+</li>
+<li class="">
+<p><strong>B is optimal</strong>:</p>
+<ul>
+<li class="">Centralized GPU server handles Gazebo + Isaac (GPU-intensive)</li>
+<li class="">Students use laptops for code editing, terminal access, learning (CPU-bound)</li>
+<li class="">Total cost: ~$10K (vs. $50K for 10 high-end PCs)</li>
+<li class="">Remote access (VNC, SSH) works well for ROS 2</li>
+</ul>
+</li>
+<li class="">
+<p><strong>C is risky</strong>: Cloud outages, latency spikes, and complexity overhead. Acceptable <em>supplemental</em> but not primary.</p>
+</li>
+<li class="">
+<p><strong>D is reasonable backup</strong>: If building a server isn&#x27;t feasible, pair students on mid-range PCs. Trade-off: queue time for GPU.</p>
+</li>
+</ul><p><strong>Key Point</strong>: GPU is the bottleneck. Centralize it; distribute everything else.</p></div></div></details>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-4-jetson-orin-nano-role">Question 4: Jetson Orin Nano Role<a href="#question-4-jetson-orin-nano-role" class="hash-link" aria-label="Direct link to Question 4: Jetson Orin Nano Role" title="Direct link to Question 4: Jetson Orin Nano Role" translate="no">​</a></h3>
+<p><strong>You&#x27;re developing a manipulation algorithm on a Unitree G1. When should you use a Jetson Orin Nano onboard compute vs. offboard workstation compute?</strong></p>
+<p>a) Always use Jetson for onboard; it&#x27;s faster than workstation GPUs.</p>
+<p>b) Use Jetson only for real-time low-latency tasks (control loops); use workstation for heavy computation (model training, planning).</p>
+<p>c) Never use Jetson; it&#x27;s insufficient for serious robotics.</p>
+<p>d) Jetson is only for hobby robots, not research.</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Show Answer</summary><div><div class="collapsibleContent_i85q"><p><strong>Correct Answer: B</strong></p><p><strong>Explanation</strong>:</p><ul>
+<li class="">
+<p><strong>A is wrong</strong>: Jetson Orin Nano (1024 CUDA cores) is much slower than RTX 3070 Ti (5,888 cores). It&#x27;s <em>power-efficient</em>, not <em>fast</em>.</p>
+</li>
+<li class="">
+<p><strong>B is correct</strong>: Jetson excels at <em>low-power real-time inference</em>:</p>
+<ul>
+<li class="">Object detection at 15–30 fps (fast enough for control)</li>
+<li class="">Lightweight policy inference (not training)</li>
+<li class="">Onboard compute keeps latency Under 50 ms (critical for control)</li>
+<li class="">Workstation handles heavy lifting (training, planning, debugging)</li>
+</ul>
+</li>
+<li class="">
+<p><strong>C is wrong</strong>: Jetson is industry-standard for robotics edge inference.</p>
+</li>
+<li class="">
+<p><strong>D is wrong</strong>: It&#x27;s used in research robots and commercial systems.</p>
+</li>
+</ul><p><strong>Key Point</strong>: Jetson is <em>complementary</em>, not <em>replacement</em>. Deploy trained models to Jetson; train on workstation.</p></div></div></details>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-5-learning-path-commitment-challenge">Question 5: Learning Path Commitment (Challenge)<a href="#question-5-learning-path-commitment-challenge" class="hash-link" aria-label="Direct link to Question 5: Learning Path Commitment (Challenge)" title="Direct link to Question 5: Learning Path Commitment (Challenge)" translate="no">​</a></h3>
+<p><strong>You&#x27;ve completed Module 1 (ROS 2) using Gazebo simulation. Your algorithm works in sim, but you have the opportunity to test on a real Unitree G1 for one afternoon. What&#x27;s your highest-priority action?</strong></p>
+<p>a) Test the exact algorithm from simulation; measure success as 1:1 match.</p>
+<p>b) Simplify the algorithm, add sensors (F/T feedback), and test basic mobility with real sensors before attempting manipulation.</p>
+<p>c) Spend time on simulator calibration so the next sim run perfectly matches real dynamics.</p>
+<p>d) Conclude that sim-to-real is impossible; only real-world training works.</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Show Answer</summary><div><div class="collapsibleContent_i85q"><p><strong>Correct Answer: B</strong></p><p><strong>Rationale</strong>:</p><ul>
+<li class="">
+<p><strong>A is naive</strong>: Sim-to-real gap is real. Expecting 1:1 match wastes your hardware time. Better to accept some gap and iterate.</p>
+</li>
+<li class="">
+<p><strong>B is strategic</strong>:</p>
+<ul>
+<li class="">Real sensors introduce new information (joint torques, foot pressure) not simulated</li>
+<li class="">Basic mobility (walking, balance) is prerequisite for manipulation</li>
+<li class="">Collect sensor data to understand real dynamics</li>
+<li class="">Use this one session to <em>learn the gap</em>, not to succeed perfectly</li>
+<li class="">Feed observations back to simulation (domain randomization parameters)</li>
+</ul>
+</li>
+<li class="">
+<p><strong>C is less valuable</strong>: Calibration helps, but you&#x27;re still testing simulation assumptions. Real hardware teaches what simulation <em>misses</em>.</p>
+</li>
+<li class="">
+<p><strong>D is wrong</strong>: Many successful robots use sim-to-real transfer. One session isn&#x27;t enough to conclude impossibility.</p>
+</li>
+</ul><p><strong>Key Point</strong>: Each hardware session is <strong>learning the gap</strong>, not validating simulation. Expect differences; use them to improve your model.</p><p><strong>What to Measure</strong>:</p><ul>
+<li class="">Latency: How long between command and motion response?</li>
+<li class="">Sensor noise: What&#x27;s the actual noise on joint encoders, IMU?</li>
+<li class="">Actuator limits: How quickly can motors actually move?</li>
+<li class="">Balance: How sensitive is the robot to tipping?</li>
+</ul><p>Feed these observations into Module 3&#x27;s domain randomization techniques.</p></div></div></details>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-outcomes-alignment-checklist">Learning Outcomes Alignment Checklist<a href="#learning-outcomes-alignment-checklist" class="hash-link" aria-label="Direct link to Learning Outcomes Alignment Checklist" title="Direct link to Learning Outcomes Alignment Checklist" translate="no">​</a></h2>
+<p>As you finish this chapter, verify you&#x27;ve mastered the learning outcomes:</p>
+<ul>
+<li class="">
+<p><strong>✓ LO 1: Understand available platforms &amp; trade-offs</strong></p>
+<ul>
+<li class="">Can you explain why Unitree G1 is better for research (open-source) vs. Optimus for manufacturing (mass production)?</li>
+<li class="">Can you articulate the cost/capability trade-off between each platform?</li>
+<li class="">Can you advise someone on which platform fits their constraints?</li>
+</ul>
+</li>
+<li class="">
+<p><strong>✓ LO 2: Compare simulation-first vs. physical-first paths</strong></p>
+<ul>
+<li class="">Can you describe the learning trajectory for simulation-first (Gazebo → Isaac → physical)?</li>
+<li class="">Can you explain why simulation is not inferior to physical (ground-truth data, iteration speed)?</li>
+<li class="">Can you reason about when hybrid approach makes sense?</li>
+</ul>
+</li>
+<li class="">
+<p><strong>✓ LO 3: Specify hardware requirements</strong></p>
+<ul>
+<li class="">Can you build a budget-appropriate workstation spec for your goals?</li>
+<li class="">Can you explain why RTX 3070 Ti (12GB) is recommended for Module 3 Isaac Sim?</li>
+<li class="">Can you describe the role of Jetson Orin Nano in a deployed system?</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-next-1">What&#x27;s Next?<a href="#whats-next-1" class="hash-link" aria-label="Direct link to What&#x27;s Next?" title="Direct link to What&#x27;s Next?" translate="no">​</a></h2>
+<p><strong>Module 0.4</strong> guides you through the <strong>path selection process</strong>: a self-assessment quiz that helps you commit to your learning approach and set up your first workstation or hardware partnership.</p>
+<p>Then, <strong>Module 1</strong> begins your hands-on journey into ROS 2—the middleware that powers every robot in this course.</p>
+<hr>
+<p><strong>Chapter Completed</strong>: December 2025
+<strong>Estimated Reading Time</strong>: 30–40 minutes
+<strong>Estimated Comprehension Time (with quiz)</strong>: 45–60 minutes
+<strong>Key Concepts Covered</strong>: 8 platform profiles, 3 learning paths, 5 hardware tiers, sim-to-real gaps, learning outcomes alignment</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-0-foundations/03-humanoid-robotics-landscape.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/module-0-foundations/why-physical-ai-matters"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Why Physical AI Matters</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/module-0-foundations/module-0-learning-path"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Learning Path &amp; Prerequisites</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction" class="table-of-contents__link toc-highlight">Introduction</a></li><li><a href="#learning-outcomes" class="table-of-contents__link toc-highlight">Learning Outcomes</a></li><li><a href="#part-1-available-humanoid-platforms" class="table-of-contents__link toc-highlight">Part 1: Available Humanoid Platforms</a><ul><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#11-unitree-g1-open-source-research-platform" class="table-of-contents__link toc-highlight">1.1 Unitree G1 (Open-Source Research Platform)</a></li><li><a href="#12-boston-dynamics-spot-quadrupedal-specialist" class="table-of-contents__link toc-highlight">1.2 Boston Dynamics Spot (Quadrupedal Specialist)</a></li><li><a href="#13-tesla-optimus-commercial-prototype" class="table-of-contents__link toc-highlight">1.3 Tesla Optimus (Commercial Prototype)</a></li><li><a href="#14-figure-01-dexterous-manipulation-focus" class="table-of-contents__link toc-highlight">1.4 Figure 01 (Dexterous Manipulation Focus)</a></li><li><a href="#15-simulation-high-fidelity-virtual-environments" class="table-of-contents__link toc-highlight">1.5 Simulation: High-Fidelity Virtual Environments</a></li></ul></li><li><a href="#part-2-learning-path-trade-offs" class="table-of-contents__link toc-highlight">Part 2: Learning Path Trade-offs</a><ul><li><a href="#overview-1" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#path-1-simulation-first-recommended-for-most-learners" class="table-of-contents__link toc-highlight">Path 1: Simulation-First (Recommended for Most Learners)</a></li><li><a href="#path-2-physical-first-limited-availability" class="table-of-contents__link toc-highlight">Path 2: Physical-First (Limited Availability)</a></li><li><a href="#path-3-hybrid-recommended-for-institutions" class="table-of-contents__link toc-highlight">Path 3: Hybrid (Recommended for Institutions)</a></li></ul></li><li><a href="#part-3-hardware-requirements-and-setup" class="table-of-contents__link toc-highlight">Part 3: Hardware Requirements and Setup</a><ul><li><a href="#31-recommended-hardware-tier-for-individual-learners" class="table-of-contents__link toc-highlight">3.1 Recommended Hardware Tier for Individual Learners</a></li><li><a href="#32-optional-jetson-orin-nano-onboard-compute-for-hardware" class="table-of-contents__link toc-highlight">3.2 Optional: Jetson Orin Nano (Onboard Compute for Hardware)</a></li><li><a href="#33-system-requirements-summary" class="table-of-contents__link toc-highlight">3.3 System Requirements Summary</a></li></ul></li><li><a href="#part-4-comparison-matrix" class="table-of-contents__link toc-highlight">Part 4: Comparison Matrix</a></li><li><a href="#part-5-gotchas-and-common-challenges" class="table-of-contents__link toc-highlight">Part 5: Gotchas and Common Challenges</a><ul><li><a href="#challenge-1-sim-to-real-gap" class="table-of-contents__link toc-highlight">Challenge 1: Sim-to-Real Gap</a></li><li><a href="#challenge-2-networking-issues-with-robot-hardware" class="table-of-contents__link toc-highlight">Challenge 2: Networking Issues with Robot Hardware</a></li><li><a href="#challenge-3-gpu-memory-constraints-isaac-sim--training" class="table-of-contents__link toc-highlight">Challenge 3: GPU Memory Constraints (Isaac Sim + Training)</a></li><li><a href="#challenge-4-ubuntu-2204-compatibility-issues" class="table-of-contents__link toc-highlight">Challenge 4: Ubuntu 22.04 Compatibility Issues</a></li><li><a href="#challenge-5-cost-and-hardware-availability" class="table-of-contents__link toc-highlight">Challenge 5: Cost and Hardware Availability</a></li></ul></li><li><a href="#part-6-summary" class="table-of-contents__link toc-highlight">Part 6: Summary</a></li><li><a href="#whats-next" class="table-of-contents__link toc-highlight">What&#39;s Next?</a></li><li><a href="#quiz-test-your-understanding" class="table-of-contents__link toc-highlight">Quiz: Test Your Understanding</a><ul><li><a href="#question-1-platform-selection" class="table-of-contents__link toc-highlight">Question 1: Platform Selection</a></li><li><a href="#question-2-sim-to-real-trade-offs" class="table-of-contents__link toc-highlight">Question 2: Sim-to-Real Trade-offs</a></li><li><a href="#question-3-hardware-requirements-and-scaling" class="table-of-contents__link toc-highlight">Question 3: Hardware Requirements and Scaling</a></li><li><a href="#question-4-jetson-orin-nano-role" class="table-of-contents__link toc-highlight">Question 4: Jetson Orin Nano Role</a></li><li><a href="#question-5-learning-path-commitment-challenge" class="table-of-contents__link toc-highlight">Question 5: Learning Path Commitment (Challenge)</a></li></ul></li><li><a href="#learning-outcomes-alignment-checklist" class="table-of-contents__link toc-highlight">Learning Outcomes Alignment Checklist</a></li><li><a href="#whats-next-1" class="table-of-contents__link toc-highlight">What&#39;s Next?</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Robotics. Built with Docusaurus and Speckit Plus.</div></div></div></footer></div>
+</body>
+</html>
