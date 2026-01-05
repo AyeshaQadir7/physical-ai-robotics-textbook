@@ -31,6 +31,21 @@ from pydantic import BaseModel, Field, validator
 from fastapi import FastAPI, HTTPException, status, Response
 from fastapi.middleware.cors import CORSMiddleware
 
+from agents import OpenAIChatCompletionsModel
+from openai import AsyncOpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = AsyncOpenAI(
+    api_key=os.getenv("OPENROUTER_API_KEY"),
+    base_url="https://openrouter.ai/api/v1",
+)
+
+third_party_model = OpenAIChatCompletionsModel(
+    openai_client=client,
+    model="mistralai/devstral-2512:free",
+)
 # Import RetrieverClient from Spec 2 for semantic search
 try:
     from retrieve import RetrieverClient
@@ -883,7 +898,7 @@ async def chat(request: ChatRequest, response: Response) -> ChatResponse:
                 # For full-collection mode: Agent autonomously calls retrieve_textbook_chunks tool
                 # For text-only mode: Pre-retrieved chunks are passed to agent
                 # Agent uses Agents SDK for automatic tool orchestration and grounding
-                agent_answer = agent.generate_response(
+                agent_answer = await agent.generate_response_async(
                     query=request.query,
                     context_chunks=retrieved_chunks if retrieved_chunks else None,
                 )
